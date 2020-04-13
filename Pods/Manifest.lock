@@ -1,0 +1,20 @@
+PODS:
+  - CLTypingLabel (0.4.0)
+  - SwiftGifOrigin (1.6.1)
+
+DEPENDENCIES:
+  - CLTypingLabel
+  - SwiftGifOrigin (~> 1.6.1)
+
+SPEC REPOS:
+  trunk:
+    - CLTypingLabel
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+
+PODFILE CHECKSUM: 7beafc4dc0e8fdef8203de30fbddfb5657cde3c5
+
+COCOAPODS: 1.8.4
