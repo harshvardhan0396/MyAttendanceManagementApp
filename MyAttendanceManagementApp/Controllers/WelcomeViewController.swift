@@ -14,6 +14,10 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var welcomeLbl: CLTypingLabel!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         welcomeLbl.text = "My Attendance Management App"
@@ -21,3 +25,4 @@ class WelcomeViewController: UIViewController {
     }
     
 }
+

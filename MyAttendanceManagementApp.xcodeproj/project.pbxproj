@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A78FD4C24484E9A007BE656 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78FD4B24484E9A007BE656 /* TestViewController.swift */; };
+		3A8726052446E91E00B26E56 /* MyTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726042446E91E00B26E56 /* MyTasksViewController.swift */; };
+		3A8726072446ED9E00B26E56 /* MyTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726062446ED9E00B26E56 /* MyTaskTableViewCell.swift */; };
+		3A8726092447142000B26E56 /* ApproveLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */; };
+		3A87260B244731D400B26E56 /* ApplyForLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */; };
 		3AAB055024447AFC00DD3116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB054F24447AFC00DD3116 /* AppDelegate.swift */; };
 		3AAB055224447AFC00DD3116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB055124447AFC00DD3116 /* SceneDelegate.swift */; };
 		3AAB055424447AFC00DD3116 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB055324447AFC00DD3116 /* HomeViewController.swift */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A78FD4B24484E9A007BE656 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		3A8726042446E91E00B26E56 /* MyTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTasksViewController.swift; sourceTree = "<group>"; };
+		3A8726062446ED9E00B26E56 /* MyTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskTableViewCell.swift; sourceTree = "<group>"; };
+		3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveLeaveViewController.swift; sourceTree = "<group>"; };
+		3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyForLeaveViewController.swift; sourceTree = "<group>"; };
 		3AAB054C24447AFC00DD3116 /* MyAttendanceManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAttendanceManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAB054F24447AFC00DD3116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AAB055124447AFC00DD3116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A7D94F1244584A9005C00B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AAB055524447AFC00DD3116 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3AAB054324447AFB00DD3116 = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +88,7 @@
 				3AAB054F24447AFC00DD3116 /* AppDelegate.swift */,
 				3AAB055124447AFC00DD3116 /* SceneDelegate.swift */,
 				3AAB056324447D7600DD3116 /* Controllers */,
-				3AAB055524447AFC00DD3116 /* Main.storyboard */,
+				3A7D94F1244584A9005C00B6 /* Views */,
 				3AAB055824447B3F00DD3116 /* Assets.xcassets */,
 				3AAB05682444A61B00DD3116 /* gify.gif */,
 				3AAB055A24447B3F00DD3116 /* LaunchScreen.storyboard */,
@@ -84,6 +102,11 @@
 			children = (
 				3AAB055324447AFC00DD3116 /* HomeViewController.swift */,
 				3AAB05662444873F00DD3116 /* WelcomeViewController.swift */,
+				3A8726042446E91E00B26E56 /* MyTasksViewController.swift */,
+				3A8726062446ED9E00B26E56 /* MyTaskTableViewCell.swift */,
+				3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */,
+				3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */,
+				3A78FD4B24484E9A007BE656 /* TestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,10 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8726072446ED9E00B26E56 /* MyTaskTableViewCell.swift in Sources */,
+				3A8726052446E91E00B26E56 /* MyTasksViewController.swift in Sources */,
 				3AAB055424447AFC00DD3116 /* HomeViewController.swift in Sources */,
 				3AAB05672444873F00DD3116 /* WelcomeViewController.swift in Sources */,
 				3AAB055024447AFC00DD3116 /* AppDelegate.swift in Sources */,
+				3A8726092447142000B26E56 /* ApproveLeaveViewController.swift in Sources */,
 				3AAB055224447AFC00DD3116 /* SceneDelegate.swift in Sources */,
+				3A78FD4C24484E9A007BE656 /* TestViewController.swift in Sources */,
+				3A87260B244731D400B26E56 /* ApplyForLeaveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
