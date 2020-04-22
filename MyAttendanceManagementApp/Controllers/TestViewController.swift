@@ -10,31 +10,19 @@ import UIKit
 
 class TestViewController: UIViewController {
 
-    @IBOutlet weak var leaveTypeSelector: UITextField!
-    let salutations = ["Casual Leave", "Paid Leave", "Sick Leave"]
-    override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        leaveTypeSelector.inputView = pickerView
+        
     }
 }
-
-extension TestViewController : UIPickerViewDataSource, UIPickerViewDelegate{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+extension TestViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return salutations.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return salutations[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        leaveTypeSelector.text = salutations[row]
-        leaveTypeSelector.resignFirstResponder()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TestTableViewCell
+        return cell!
     }
     
     

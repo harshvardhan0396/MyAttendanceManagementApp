@@ -22,6 +22,9 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         welcomeLbl.text = "My Attendance Management App"
         gifImageView.loadGif(name: "gify")
+        
+        self.userNameTextField.addBottomBorder()
+        self.passwordTextField.addBottomBorder()
     }
     
 }

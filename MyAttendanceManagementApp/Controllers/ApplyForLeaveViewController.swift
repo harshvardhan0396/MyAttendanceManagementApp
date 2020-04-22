@@ -12,10 +12,19 @@ class ApplyForLeaveViewController: UIViewController {
     let salutations = ["Casual Leave", "Paid Leave", "Sick Leave"]
     @IBOutlet weak var leavetypePicker: UITextField!
     @IBOutlet weak var fromDateText: UITextField!
-    
     @IBOutlet weak var toDateText: UITextField!
+
+    @IBOutlet weak var reasonTextView: UITextView!
+    @IBOutlet weak var totalDaysTextField: UITextField!
+    @IBOutlet weak var appliedByTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.leavetypePicker.addBottomBorder()
+        self.fromDateText.addBottomBorder()
+        self.toDateText.addBottomBorder()
+       self.appliedByTextField.addBottomBorder()
+        self.totalDaysTextField.addBottomBorder()
+        self.reasonTextView.addBottomBorder()
         fromDateText.delegate = self
         
         //for leave picker

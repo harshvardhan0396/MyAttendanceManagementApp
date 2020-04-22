@@ -20,7 +20,10 @@ class MyTaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var requestedByLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
-    
+    override func layoutSubviews() {
+        leaveImage.layer.cornerRadius = leaveImage.bounds.height / 2
+        leaveImage.clipsToBounds = true
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
