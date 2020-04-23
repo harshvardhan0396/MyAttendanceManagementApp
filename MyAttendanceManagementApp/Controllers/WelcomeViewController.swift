@@ -17,6 +17,16 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loginButtonPressed: UIButton!
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        let window = UIWindow()
+        let story = UIStoryboard(name: "Main", bundle:nil)
+        let vc = story.instantiateViewController(withIdentifier: "homeViewController") as! HomeViewController
+        UIApplication.shared.windows.first?.rootViewController = vc
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

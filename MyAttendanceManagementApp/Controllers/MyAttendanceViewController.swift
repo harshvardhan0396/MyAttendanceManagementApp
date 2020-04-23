@@ -30,6 +30,7 @@ extension MyAttendanceViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyAttendanceTableViewCell
         cell?.dateLabel.text = dateArray[indexPath.row]
         cell?.timeLabel.text = timeArray[indexPath.row]
+        cell?.selectionStyle = .none
         return cell!
     }
     

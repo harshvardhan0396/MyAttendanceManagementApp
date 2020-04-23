@@ -36,6 +36,7 @@ extension MyLeavesViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyLeavesTableViewCell
         cell?.cellDateLabel.text = dateArray[indexPath.row]
         cell?.cellReasonLabel.text = reasonArray[indexPath.row]
+        cell?.selectionStyle = .none
         return cell!
     }
     

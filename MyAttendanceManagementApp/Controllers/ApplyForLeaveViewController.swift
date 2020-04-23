@@ -9,6 +9,7 @@
 import UIKit
 
 class ApplyForLeaveViewController: UIViewController {
+    
     let salutations = ["Casual Leave", "Paid Leave", "Sick Leave"]
     @IBOutlet weak var leavetypePicker: UITextField!
     @IBOutlet weak var fromDateText: UITextField!
@@ -59,10 +60,12 @@ extension ApplyForLeaveViewController: UITextFieldDelegate{
         toDateText.inputAccessoryView = toolBar
     }
     @objc func doneButtonCicked() {
+     
         if fromDateText.isFirstResponder {
             if let fromDatePicker = fromDateText.inputView as? UIDatePicker{
                 let dateFormat = DateFormatter()
                 dateFormat.dateStyle = .medium
+     
                 fromDateText.text = dateFormat.string(from: fromDatePicker.date)
             }
         }
@@ -70,6 +73,7 @@ extension ApplyForLeaveViewController: UITextFieldDelegate{
             if let fromDatePicker = toDateText.inputView as? UIDatePicker{
                 let dateFormat = DateFormatter()
                 dateFormat.dateStyle = .medium
+     
                 toDateText.text = dateFormat.string(from: fromDatePicker.date)
             }
         }
