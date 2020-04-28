@@ -21,11 +21,11 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         
-        let window = UIWindow()
-        let story = UIStoryboard(name: "Main", bundle:nil)
-        let vc = story.instantiateViewController(withIdentifier: "homeViewController") as! HomeViewController
-        UIApplication.shared.windows.first?.rootViewController = vc
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+//        let window = UIWindow()
+//        let story = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = story.instantiateViewController(withIdentifier: "homeViewController") as! HomeViewController
+//        UIApplication.shared.windows.first?.rootViewController = vc
+//        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     
     override func viewDidLoad() {

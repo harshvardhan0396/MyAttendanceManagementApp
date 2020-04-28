@@ -20,6 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = attributes
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        
+//        var window = UIWindow()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        var controller: HomeViewController? = nil
+//        #if NewHomeScreen
+//        controller = storyboard.instantiateViewController(withIdentifier: "homeViewController")
+//        #else
+//        controller = storyboard.instantiateViewController(withIdentifier: "homeViewController") as? HomeViewController
+//        #endif
+//        window.rootViewController = controller
+//        window.makeKeyAndVisible()
+//        
+        
+        
         return true
     }
 

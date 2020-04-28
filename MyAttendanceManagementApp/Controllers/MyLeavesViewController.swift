@@ -14,17 +14,16 @@ class MyLeavesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-
-    @IBAction func approveButtonPrewwed(_ sender: UIButton) {
-    }
-    
-    @IBAction func pendingButtonPressed(_ sender: Any) {
+        
+        self.approvedButtonPressed.setBordersSettings()
+        self.pendingButtonPressed.setBordersSettings()
+        self.rejectedButtonPressed.setBordersSettings()
     }
     
-    @IBAction func rejectedButtonPressed(_ sender: Any) {
-    }
+    @IBOutlet weak var rejectedButtonPressed: UIButton!
+    @IBOutlet weak var approvedButtonPressed: UIButton!
+    
+    @IBOutlet weak var pendingButtonPressed: UIButton!
 }
 
 extension MyLeavesViewController: UITableViewDelegate, UITableViewDataSource{
@@ -41,5 +40,25 @@ extension MyLeavesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
      
+}
+
+//extension UIButton{
+//    func buttonBorder(){
+//        UIButton.layer.borderWidth = 2.0
+//        UIButton.layer.borderColor = [UIColor .systemPink].CGColor;
+//    }
+//
+//}
+
+
+extension UIButton {
+func setBordersSettings() {
+        //let c1GreenColor = (UIColor(red: -0.108958, green: 0.714926, blue: 0.758113, alpha: 1.0))
+        self.layer.borderWidth = 2.0
+        self.layer.cornerRadius = 5.0
+        self.layer.borderColor = UIColor.systemPink.cgColor
+        //self.setTitleColor(c1GreenColor, for: .normal)
+        self.layer.masksToBounds = true
+    }
 }
 

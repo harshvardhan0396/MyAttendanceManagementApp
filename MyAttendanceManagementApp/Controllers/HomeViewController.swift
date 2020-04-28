@@ -15,11 +15,13 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         
     }
     
-    @IBAction func menuButtonPressed(_ sender: Any) {
-  
+    
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
