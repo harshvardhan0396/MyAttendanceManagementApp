@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SPL-lg-rCq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EGm-7m-qJ6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -482,6 +482,7 @@
                                             <outlet property="nameLbl" destination="dXH-ty-XL1" id="aic-rt-egt"/>
                                             <outlet property="requestedByLbl" destination="eTb-v7-ki7" id="lJd-vf-80M"/>
                                             <outlet property="requestedOnLbl" destination="dVD-rX-yVT" id="dBo-m1-161"/>
+                                            <segue destination="8fT-ZF-5gB" kind="show" id="qCc-JO-OVi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -500,7 +501,7 @@
             </objects>
             <point key="canvasLocation" x="4853.6231884057979" y="-1199.3303571428571"/>
         </scene>
-        <!--Approve Leave View Controller-->
+        <!--Approve Leave-->
         <scene sceneID="Toe-O5-GTB">
             <objects>
                 <viewController storyboardIdentifier="ApproveLeaveViewController" id="8fT-ZF-5gB" customClass="ApproveLeaveViewController" customModule="MyAttendanceManagementApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -625,7 +626,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="UO9-I5-cqj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZlG-Pd-w7e"/>
+                    <navigationItem key="navigationItem" title="Approve Leave" id="ZlG-Pd-w7e"/>
                     <connections>
                         <outlet property="fromDateTextField" destination="Gyi-yD-Hq0" id="jHL-7g-P8n"/>
                         <outlet property="leaveTypeTextField" destination="tCX-Xg-fkx" id="8Ad-hY-cH7"/>
@@ -638,7 +639,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uw9-MO-2TV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6494" y="-1214"/>
+            <point key="canvasLocation" x="6494" y="-1199"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hKY-pb-HoT">

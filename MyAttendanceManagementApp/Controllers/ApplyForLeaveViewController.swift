@@ -10,23 +10,33 @@ import UIKit
 
 class ApplyForLeaveViewController: UIViewController {
     
-    let salutations = ["Casual Leave", "Paid Leave", "Sick Leave"]
+    let salutations = ["","Casual Leave", "Paid Leave", "Sick Leave"]
     @IBOutlet weak var leavetypePicker: UITextField!
+    
     @IBOutlet weak var fromDateText: UITextField!
     @IBOutlet weak var toDateText: UITextField!
 
     @IBOutlet weak var reasonTextView: UITextView!
     @IBOutlet weak var totalDaysTextField: UITextField!
     @IBOutlet weak var appliedByTextField: UITextField!
+    
+    let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //for adding border
         self.leavetypePicker.addBottomBorder()
         self.fromDateText.addBottomBorder()
         self.toDateText.addBottomBorder()
-       self.appliedByTextField.addBottomBorder()
+        self.appliedByTextField.addBottomBorder()
         self.totalDaysTextField.addBottomBorder()
         self.reasonTextView.addBottomBorder()
+        
+        //for date picker
         fromDateText.delegate = self
+        toDateText.delegate = self
+        
         
         //for leave picker
         let pickerView = UIPickerView()
@@ -40,52 +50,73 @@ class ApplyForLeaveViewController: UIViewController {
 
 extension ApplyForLeaveViewController: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        let datePicker = UIDatePicker()
+        
+       
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelButtonClicked))
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneButtonCicked))
+        
+        let flexibleButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([cancelButton, flexibleButton, doneButton], animated: false)
+        
         if textField == fromDateText {
             datePicker.datePickerMode = .date
         }
         if textField == toDateText {
             datePicker.datePickerMode = .date
         }
+
+        fromDateText.inputAccessoryView = toolBar
+        toDateText.inputAccessoryView = toolBar
+
         fromDateText.inputView = datePicker
         toDateText.inputView = datePicker
         
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
-
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelButtonClicked))
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneButtonCicked))
-        let flexibleButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([cancelButton, flexibleButton,doneButton], animated: false)
-        fromDateText.inputAccessoryView = toolBar
-        toDateText.inputAccessoryView = toolBar
-    }
-    @objc func doneButtonCicked() {
-     
-        if fromDateText.isFirstResponder {
-            if let fromDatePicker = fromDateText.inputView as? UIDatePicker{
-                let dateFormat = DateFormatter()
-                dateFormat.dateStyle = .medium
-     
-                fromDateText.text = dateFormat.string(from: fromDatePicker.date)
-            }
-        }
-        if toDateText.isFirstResponder {
-            if let fromDatePicker = toDateText.inputView as? UIDatePicker{
-                let dateFormat = DateFormatter()
-                dateFormat.dateStyle = .medium
-     
-                toDateText.text = dateFormat.string(from: fromDatePicker.date)
-            }
-        }
-        fromDateText.resignFirstResponder()
-        toDateText.resignFirstResponder()
+        datePicker.datePickerMode = .date
+        
     }
     @objc func cancelButtonClicked(){
         fromDateText.resignFirstResponder()
         toDateText.resignFirstResponder()
     }
+
+    @objc func doneButtonCicked() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        var startDate: Date
+        var endDate: Date
+        
+        
+        if fromDateText.isFirstResponder{
+            fromDateText.text = dateFormatter.string(from: datePicker.date)
+            fromDateText.resignFirstResponder()
+        }
+        startDate = dateFormatter.date(from: fromDateText.text!)! as Date
+        if toDateText.isFirstResponder{
+            toDateText.text = dateFormatter.string(from: datePicker.date)
+            endDate = dateFormatter.date(from: toDateText.text!)! as Date
+            toDateText.resignFirstResponder()
+            let days = getNumberOfDays(sDate: startDate, eDate: endDate) + 1
+            totalDaysTextField.text = "\(days)"
+        }
+    }
+    
+    func getNumberOfDays(sDate: Date, eDate: Date) -> Int{
+        return Calendar.current.dateComponents([.day], from: sDate, to: eDate).day!
+    }
+        
+
 }
 
+
+//leave type
 extension ApplyForLeaveViewController : UIPickerViewDataSource, UIPickerViewDelegate{
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
