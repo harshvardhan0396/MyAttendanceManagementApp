@@ -28,6 +28,8 @@
 		3AAB055C24447B3F00DD3116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB055A24447B3F00DD3116 /* LaunchScreen.storyboard */; };
 		3AAB05672444873F00DD3116 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB05662444873F00DD3116 /* WelcomeViewController.swift */; };
 		3AAB05692444A62300DD3116 /* gify.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB05682444A61B00DD3116 /* gify.gif */; };
+		3AB9858824617A5200ADAFAE /* RootAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9858724617A5100ADAFAE /* RootAPI.swift */; };
+		3AB9858A2461A41700ADAFAE /* GreetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB985892461A41700ADAFAE /* GreetUser.swift */; };
 		3ACC9357245FEACB00D2CB25 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC9356245FEACB00D2CB25 /* DataModel.swift */; };
 		5BF22C8054789F738062C896 /* Pods_MyAttendanceManagementApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD72EF0D04A6BDEB047AC39C /* Pods_MyAttendanceManagementApp.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		3AAB055D24447B3F00DD3116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AAB05662444873F00DD3116 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3AAB05682444A61B00DD3116 /* gify.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = gify.gif; path = ../../images/gify.gif; sourceTree = "<group>"; };
+		3AB9858724617A5100ADAFAE /* RootAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAPI.swift; sourceTree = "<group>"; };
+		3AB985892461A41700ADAFAE /* GreetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetUser.swift; sourceTree = "<group>"; };
 		3ACC9356245FEACB00D2CB25 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		7B9407BCE9F68982ADC9A6C0 /* Pods-MyAttendanceManagementApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAttendanceManagementApp.debug.xcconfig"; path = "Target Support Files/Pods-MyAttendanceManagementApp/Pods-MyAttendanceManagementApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DD71BFCB9D36E22DBFC8709B /* Pods-MyAttendanceManagementApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAttendanceManagementApp.release.xcconfig"; path = "Target Support Files/Pods-MyAttendanceManagementApp/Pods-MyAttendanceManagementApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				3A76627E244DE01400862004 /* MyAttendanceViewController.swift */,
 				3A679C882450189F00C3AFE4 /* ButtonBorder.swift */,
 				3A9A7B45245142640068FD95 /* UIViewRoundCorner.swift */,
+				3AB9858724617A5100ADAFAE /* RootAPI.swift */,
+				3AB985892461A41700ADAFAE /* GreetUser.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -291,11 +297,13 @@
 				3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */,
 				3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */,
 				3A76627F244DE01400862004 /* MyAttendanceViewController.swift in Sources */,
+				3AB9858A2461A41700ADAFAE /* GreetUser.swift in Sources */,
 				3A87260B244731D400B26E56 /* ApplyForLeaveViewController.swift in Sources */,
 				3A9A7B46245142650068FD95 /* UIViewRoundCorner.swift in Sources */,
 				3A8AE3EF244992BF0034AC37 /* TestTableViewCell.swift in Sources */,
 				3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */,
 				3A76627B244D816D00862004 /* MyLeavesTableViewCell.swift in Sources */,
+				3AB9858824617A5200ADAFAE /* RootAPI.swift in Sources */,
 				3ACC9357245FEACB00D2CB25 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

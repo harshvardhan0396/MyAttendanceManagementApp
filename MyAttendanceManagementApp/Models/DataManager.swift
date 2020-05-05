@@ -16,9 +16,12 @@ protocol AttendnaceDataManagerDelegate{
 struct DataManager{
     
     var delegate: AttendnaceDataManagerDelegate?
+    var rootAPI = RootAPI()
     
-    func getDataFromAPI(){
-        let mockAPIURL = URL(string: "https://private-e93d27-test110028.apiary-mock.com/employee")
+    
+    func getData(parameter: String){
+        let mockAPIURL = URL(string: rootAPI.baseURL + parameter)
+        print(mockAPIURL)
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: mockAPIURL! ) { (data, response, error) in
             if error != nil{

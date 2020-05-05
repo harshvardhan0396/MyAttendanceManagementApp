@@ -11,17 +11,26 @@ import UIKit
 class HomeViewController: UIViewController{
     
     var dataManager = DataManager()
-   
-    @IBOutlet weak var LeadingConstraint: NSLayoutConstraint!
+    var presentDateandWeekDay = DateAndWeekDay()
+    
+    @IBOutlet weak var dateAndWeekDayLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var greetLbl: UILabel!
+    @IBOutlet weak var employeeNameLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateAndWeekDayLbl.text = presentDateandWeekDay.getDateAndWeekDay()
         dataManager.delegate = self
         navigationItem.hidesBackButton = true
-        dataManager.getDataFromAPI()
+        self.getDataFromAPI()
     }
         
-    
+    func getDataFromAPI(){
+        dataManager.getData(parameter: "/employee")
+        
+    }
     @IBAction func logoutButtonPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
@@ -29,7 +38,8 @@ class HomeViewController: UIViewController{
 
 extension HomeViewController : AttendnaceDataManagerDelegate{
     func didUpdateEmployeeData(data: EmployeeData) {
-        print(data.employeeName)
-        print(data.employeeEmail)
+        DispatchQueue.main.async {
+            self.employeeNameLbl.text =  data.employeeName
+        }
     }
 }
