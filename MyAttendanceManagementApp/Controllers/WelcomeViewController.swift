@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var loginButtonPressed: UIButton!
+    //@IBOutlet weak var loginButtonPressed: UIButton!
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         

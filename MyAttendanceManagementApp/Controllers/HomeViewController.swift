@@ -10,18 +10,26 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
+    var dataManager = DataManager()
    
     @IBOutlet weak var LeadingConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataManager.delegate = self
         navigationItem.hidesBackButton = true
-        
+        dataManager.getDataFromAPI()
     }
-    
+        
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 }
 
+extension HomeViewController : AttendnaceDataManagerDelegate{
+    func didUpdateEmployeeData(data: EmployeeData) {
+        print(data.employeeName)
+        print(data.employeeEmail)
+    }
+}
