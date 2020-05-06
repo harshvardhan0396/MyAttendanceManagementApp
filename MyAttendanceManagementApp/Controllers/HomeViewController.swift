@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: UIViewController{
     
     var dataManager = DataManager()
-    var presentDateandWeekDay = DateAndWeekDay()
+    var displayDateAndGreetings = DateAndGreetings()
     
     @IBOutlet weak var dateAndWeekDayLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
@@ -21,7 +21,8 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateAndWeekDayLbl.text = presentDateandWeekDay.getDateAndWeekDay()
+        dateAndWeekDayLbl.text = displayDateAndGreetings.getDateAndWeekDay()
+        greetLbl.text = displayDateAndGreetings.greetUser()
         dataManager.delegate = self
         navigationItem.hidesBackButton = true
         self.getDataFromAPI()
