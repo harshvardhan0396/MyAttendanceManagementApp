@@ -8,77 +8,21 @@
 
 import Foundation
 
-protocol AttendnaceDataManagerDelegate{
-    func didUpdateEmployeeData(data: EmployeeData)
-    func didUpdateLeavesCount(data: LeavesCount)
-}
+struct GetDataFromAPI{
 
+    func employeeData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler: @escaping(_ result: T) -> Void){
+        URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
 
-struct DataManager{
-    
-    var delegate: AttendnaceDataManagerDelegate?
-    var rootAPI = RootAPI()
-    
-    //getting employee data
-    func getEmployeeData(parameter: String){
-        let mockAPIURL = URL(string: rootAPI.baseURL + parameter)
-        print(mockAPIURL)
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: mockAPIURL! ) { (data, response, error) in
-            if error != nil{
-                print(error!)
-            }
-            if let safeData = data{
-                if let empData = self.parseJSONForEmployee(employeeData: safeData){
-                    self.delegate?.didUpdateEmployeeData(data: empData)
+            if(error == nil && data != nil && data?.count != 0){
+                let decoder = JSONDecoder()
+                do{
+                    let result = try decoder.decode(T.self, from: data!)
+                    _ = completionHandler(result)
+                }
+                catch let error{
+                    print(error)
                 }
             }
-        }
-        task.resume()
-    }
-    
-    func parseJSONForEmployee(employeeData: Data) -> EmployeeData?{
-        let decoder = JSONDecoder()
-        do{
-            let decodedData = try decoder.decode(EmployeeData.self, from: employeeData)
-            //print(decodedData.employeeName)
-            return decodedData
-        }
-        catch{
-            print(error)
-            return nil
-        }
-    }
-    
-    //getting leaves data
-    func getLeaveeData(parameter: String){
-        let mockAPIURL = URL(string: rootAPI.baseURL + parameter)
-        print(mockAPIURL)
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: mockAPIURL! ) { (data, response, error) in
-            if error != nil{
-                print(error!)
-            }
-            if let safeData = data{
-                if let leavesCount = self.parseJSONForLeave(data: safeData){
-                    self.delegate?.didUpdateLeavesCount(data: leavesCount)
-                }
-            }
-        }
-        task.resume()
-    }
-    
-    func parseJSONForLeave(data: Data) -> LeavesCount?{
-        let decoder = JSONDecoder()
-        do{
-            let decodedData = try decoder.decode(LeavesCount.self, from: data)
-            //print(decodedData.employeeName)
-            return decodedData
-        }
-        catch{
-            print(error)
-            return nil
-        }
+        }.resume()
     }
 }
-

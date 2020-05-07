@@ -32,9 +32,9 @@ struct LeavesBase: Decodable{
 }
 
 struct Leave: Decodable{
-    var Image: String
-    var Subject: String
-    var Date: String
+    var image: String
+    var subject: String
+    var date: String
 }
 
 
@@ -58,8 +58,8 @@ struct Tasks: Decodable{
 
 //baseURL + /attendance/4
 struct Attendnace: Decodable{
-    var Present: Int
-    var Absent: Int
+    var present: Int
+    var absent: Int
 }
 
 //baseURL + /attendanceSummary/4
@@ -81,7 +81,7 @@ struct AttendanceData: Decodable{
 
 //baseURL + /holiday/4
 struct Holiday: Decodable{
-    var Date: String
-    var FestivalName: String
-    var Day: String
+    var date: Int
+    var holidayName: String
+    var day: String
 }

@@ -19,8 +19,6 @@ struct DateAndGreetings{
         let weekDayInString = getWeekDayInString(weekDay: weekDay)
         let dateTimeString = formatter.string(from: cufrentDateTime)
         let dayAndDateString = weekDayInString + ", " + dateTimeString
-        print("week day - \(weekDayInString)")
-        print("date  - \(dateTimeString)")
         return dayAndDateString
     }
     
