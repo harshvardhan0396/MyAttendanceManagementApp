@@ -18,6 +18,9 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var greetLbl: UILabel!
     @IBOutlet weak var employeeNameLbl: UILabel!
     
+    @IBOutlet weak var slLbl: UILabel!
+    @IBOutlet weak var clLbl: UILabel!
+    @IBOutlet weak var plLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +32,8 @@ class HomeViewController: UIViewController{
     }
         
     func getDataFromAPI(){
-        dataManager.getData(parameter: "/employee")
-        
+        dataManager.getEmployeeData(parameter: "/employee")
+        dataManager.getLeaveeData(parameter: "/leaves")
     }
     @IBAction func logoutButtonPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
@@ -38,9 +41,19 @@ class HomeViewController: UIViewController{
 }
 
 extension HomeViewController : AttendnaceDataManagerDelegate{
+
     func didUpdateEmployeeData(data: EmployeeData) {
         DispatchQueue.main.async {
             self.employeeNameLbl.text =  data.employeeName
+        }
+    }
+    
+    func didUpdateLeavesCount(data: LeavesCount) {
+        DispatchQueue.main.async {
+            self.plLbl.text = String(data.sl)
+            self.clLbl.text = String(data.cl)
+            self.slLbl.text = String(data.pl)
+            //self.employeeNameLbl.text =  data.employeeName
         }
     }
 }

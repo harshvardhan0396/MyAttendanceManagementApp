@@ -19,9 +19,9 @@ struct EmployeeData: Decodable{
 
 //baseURL + /leaves
 struct LeavesCount: Decodable{
-    var Sl: Int
-    var Cl: Int
-    var Pl: Int
+    var sl: Int
+    var cl: Int
+    var pl: Int
 }
 
 //baseURL + /leaves/pl/pending/1

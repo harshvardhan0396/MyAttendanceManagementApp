@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome View Controller-->
+        <!--WelCome-->
         <scene sceneID="k8z-rV-kuK">
             <objects>
                 <viewController storyboardIdentifier="welcomeViewController" id="7tC-YI-KWG" customClass="WelcomeViewController" customModule="MyAttendanceManagementApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TIF-ZE-CYp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XdZ-EO-iRj"/>
+                    <navigationItem key="navigationItem" title="WelCome" id="XdZ-EO-iRj"/>
                     <connections>
                         <outlet property="gifImageView" destination="bZf-FQ-uJX" id="MA2-a8-orU"/>
                         <outlet property="passwordTextField" destination="5pD-nU-X1J" id="rdi-0g-gn1"/>
@@ -180,6 +180,9 @@
                                         <state key="normal" title="5">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="EGm-7m-qJ6" kind="show" id="R1E-Ym-GFh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -372,10 +375,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clLbl" destination="ELh-Xh-LZB" id="rpa-qS-oPv"/>
                         <outlet property="dateAndWeekDayLbl" destination="4CF-qX-7JR" id="GT7-gB-iTm"/>
                         <outlet property="dateLbl" destination="4CF-qX-7JR" id="Hj1-LD-b0Y"/>
                         <outlet property="employeeNameLbl" destination="gKV-SU-v0I" id="BA6-8K-ZMK"/>
                         <outlet property="greetLbl" destination="dLJ-Nz-fHu" id="f9q-qw-zap"/>
+                        <outlet property="plLbl" destination="g85-sQ-NJy" id="i7O-PI-cSM"/>
+                        <outlet property="slLbl" destination="h8I-S0-Os6" id="TO5-Ye-1UA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -784,7 +790,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCA-y8-stq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4855" y="1096"/>
+            <point key="canvasLocation" x="4854" y="1120"/>
         </scene>
         <!--My Leaves-->
         <scene sceneID="xXI-YE-ew5">
