@@ -10,6 +10,9 @@ import UIKit
 
 class ApproveLeaveViewController: UIViewController {
 
+    var rootAPI = RootAPI()
+    var getData = GetDataFromAPI()
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var fromDateTextField: UITextField!
     
@@ -32,6 +35,7 @@ class ApproveLeaveViewController: UIViewController {
         self.totalDaysTextField.addBottomBorder()
         self.rejectionTextField.addBottomBorder()
         self.reasonTextField.addBottomBorder()
+        self.getApproveLeaveData()
         
      }
 }
@@ -55,4 +59,21 @@ extension UITextView{
         layer.addSublayer(bottomLine)
     }  
 
+}
+
+
+extension ApproveLeaveViewController{
+    func getApproveLeaveData(){
+        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/approveLeave/1")!, resultType: ApproveLeave.self){
+            (approveLeaveResponse) in
+                DispatchQueue.main.async{
+                    self.nameTextField.text = approveLeaveResponse.appliedBy
+                    self.fromDateTextField.text = approveLeaveResponse.fromDate
+                    self.toDateTextField.text = approveLeaveResponse.toDate
+                    self.leaveTypeTextField.text = approveLeaveResponse.leaveType
+                    self.totalDaysTextField.text = String(approveLeaveResponse.totalDays)
+                    self.reasonTextField.text = approveLeaveResponse.reason
+                }
+            }
+    }
 }

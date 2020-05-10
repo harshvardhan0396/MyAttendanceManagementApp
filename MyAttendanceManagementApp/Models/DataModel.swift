@@ -51,10 +51,17 @@ struct Tasks: Decodable{
     var requestedOn : String
 }
 
-//baseURL + /tasks/harsh
-//struct CheckTasks: Decodable{
-    
-//}
+//baseURL + /approveLeave/1
+struct ApproveLeave: Decodable{
+    var image: String
+    var subject: String
+    var appliedBy: String
+    var fromDate: String
+    var toDate: String
+    var totalDays: Int
+    var leaveType: String
+    var reason: String
+}
 
 //baseURL + /attendance/4
 struct Attendnace: Decodable{
