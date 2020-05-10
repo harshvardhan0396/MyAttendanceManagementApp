@@ -9,36 +9,54 @@
 import UIKit
 
 class MyTasksViewController: UIViewController {
-
     
-    var requestedDateLbl = ["10/02/2020","18/03/2020","21/03/2020"]
-
-    var requestedByLbl = ["Harshvardhan","Chirag","Edris"]
+    @IBOutlet weak var tableView: UITableView!
+    var rootAPI = RootAPI()
+    var getData = GetDataFromAPI()
+    var totalTasks: Int = 0
     
+//    var requestedDateArr = []()
+//
+//    var requestedByArr = []()
+    
+    var tasksData = [Tasks]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.getTasksData()
+
         // Do any additional setup after loading the view.
     }
-    
-
 }
+
+extension MyTasksViewController{
+    
+    func getTasksData(){
+        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/tasks")!, resultType: [Tasks].self){
+            (tasksResponse) in
+            for arr in tasksResponse{
+                self.tasksData.append(arr)
+                DispatchQueue.main.async{
+                    self.tableView?.reloadData()
+                }
+            }
+            //print([self.tasksData])
+        }
+    }
+}
+
 extension MyTasksViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return requestedByLbl.count
+        self.totalTasks = tasksData.count
+        return self.tasksData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyTaskTableViewCell
-        cell?.dateLbl.text = requestedDateLbl[indexPath.row]
-        cell?.nameLbl.text = requestedByLbl[indexPath.row]
+            cell?.subjectLbl.text = tasksData[indexPath.row].subject
+            cell?.dateLbl.text = tasksData[indexPath.row].requestedOn
+            cell?.nameLbl.text = tasksData[indexPath.row].requestedBy
+            print(tasksData[indexPath.row].requestedBy)
         return cell!
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "ApproveLeaveViewController") as? ApproveLeaveViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
-    }
-    
-    
 }
 

@@ -12,7 +12,8 @@ class HomeViewController: UIViewController{
     
     var rootAPI = RootAPI()
     var getData = GetDataFromAPI()
-    
+    var callTasksFunction = MyTasksViewController()
+    var callAttendanceFunction = MyAttendanceViewController()
     var displayDateAndGreetings = DateAndGreetings()
     
     @IBOutlet weak var dateAndWeekDayLbl: UILabel!
@@ -24,9 +25,10 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var clLbl: UILabel!
     @IBOutlet weak var plLbl: UILabel!
     
+    @IBOutlet weak var totalTasksButton: UIButton!
     
-    @IBOutlet weak var totalPresentLbl: UIButton!
-    @IBOutlet weak var totalAbsentLbl: UIButton!
+    @IBOutlet weak var totalPresentButton: UIButton!
+    @IBOutlet weak var totalAbsentButton: UIButton!
     
     @IBOutlet weak var holidayDateLbl: UILabel!
     @IBOutlet weak var holidayNameLbl: UILabel!
@@ -38,6 +40,9 @@ class HomeViewController: UIViewController{
         greetLbl.text = displayDateAndGreetings.greetUser()
         navigationItem.hidesBackButton = true
         self.presentDataToHomePage()
+        callTasksFunction.getTasksData()
+        callAttendanceFunction.getAttendanceSummaryData()
+        //callAttendanceFunction.getAttendanceData()
     }
         
     
@@ -69,8 +74,8 @@ extension HomeViewController{
 
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/attendance/4")!, resultType: Attendnace.self){(attendanceResponse) in
                 DispatchQueue.main.async{
-                    self.totalPresentLbl.setTitle("\(attendanceResponse.present)", for: .normal)
-                    self.totalAbsentLbl.setTitle("\(attendanceResponse.absent)", for: .normal)
+                    self.totalPresentButton.setTitle("\(attendanceResponse.present)", for: .normal)
+                    self.totalAbsentButton.setTitle("\(attendanceResponse.absent)", for: .normal)
                 }
         }
         
@@ -81,6 +86,9 @@ extension HomeViewController{
                     self.holidayWeekDayLbl.text =  holidayResponse.day
                 }
         }
+        
+        //self.totalTasksButton.setTitle("\(callFunction.totalTasks)", for: .normal)
+        
 
     }
 

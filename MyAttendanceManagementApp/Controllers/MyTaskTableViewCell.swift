@@ -18,6 +18,8 @@ class MyTaskTableViewCell: UITableViewCell {
     @IBOutlet weak var requestedOnLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     
+    
+    @IBOutlet weak var subjectLbl: UILabel!
     @IBOutlet weak var requestedByLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     override func layoutSubviews() {

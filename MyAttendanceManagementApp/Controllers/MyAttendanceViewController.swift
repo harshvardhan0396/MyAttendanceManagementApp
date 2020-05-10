@@ -9,30 +9,60 @@
 import UIKit
 
 class MyAttendanceViewController: UIViewController {
-    var dateArray = ["2-jan,2020","3-jan,2020","4-jan,2020"]
-    var timeArray = ["9:00 AM - 6:00 PM","",""]
+    
+    var attendanceData = [AttendanceData]()
+    
+    var rootAPI = RootAPI()
+    var getData = GetDataFromAPI()
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var monthNameLbl: UILabel!
+    @IBOutlet weak var totalLbl: UILabel!
+    @IBOutlet weak var presentLbl: UILabel!
+    @IBOutlet weak var absentLbl: UILabel!
+    @IBOutlet weak var holidayLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.getAttendanceSummaryData()
     }
     
 
 }
 
+extension MyAttendanceViewController{
+    func getAttendanceSummaryData(){
+        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/attendanceSummary/4")!, resultType: AttendanceSummary.self){
+            (attendanceSummaryResponse) in
+            DispatchQueue.main.async{
+                self.monthNameLbl?.text = attendanceSummaryResponse.monthName
+                self.totalLbl?.text = String(attendanceSummaryResponse.total)
+                self.presentLbl?.text = String(attendanceSummaryResponse.present)
+                self.absentLbl?.text = String(attendanceSummaryResponse.absent)
+                self.holidayLbl?.text = String(attendanceSummaryResponse.holidays)
+                
+                for arr in attendanceSummaryResponse.data{
+                    self.attendanceData.append(arr)
+                    DispatchQueue.main.async{
+                        self.tableView?.reloadData()
+                    }
+                }
+            }
+        }
+    }
+}
 
 extension MyAttendanceViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dateArray.count
+        return attendanceData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyAttendanceTableViewCell
-        cell?.dateLabel.text = dateArray[indexPath.row]
-        cell?.timeLabel.text = timeArray[indexPath.row]
+        cell?.dateLabel.text = attendanceData[indexPath.row].date
+        cell?.timeLabel.text = attendanceData[indexPath.row].time
         cell?.selectionStyle = .none
         return cell!
     }
-    
     
 }

@@ -45,10 +45,10 @@ struct TaskBase: Decodable{
 }
 
 struct Tasks: Decodable{
-    var Image : String
-    var Subject : String
-    var RequestedBy : String
-    var RequestedOn : String
+    var image : String
+    var subject : String
+    var requestedBy : String
+    var requestedOn : String
 }
 
 //baseURL + /tasks/harsh
@@ -64,19 +64,19 @@ struct Attendnace: Decodable{
 
 //baseURL + /attendanceSummary/4
 struct AttendanceSummary: Decodable{
-    var MonthName: String
-    var Total: Int
-    var Present: Int
-    var Absent: Int
-    var Holidays: Int
-    var Data: [AttendanceData]
+    var monthName: String
+    var total: Int
+    var present: Int
+    var absent: Int
+    var holidays: Int
+    var data: [AttendanceData]
 }
 
 struct AttendanceData: Decodable{
-    var AttendanceType: String
-    var Image: String
-    var Date: String
-    var Time: String
+    var attendanceType: String
+    var image: String
+    var date: String
+    var time: String
 }
 
 //baseURL + /holiday/4

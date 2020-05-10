@@ -385,8 +385,9 @@
                         <outlet property="holidayWeekDayLbl" destination="rlq-bq-bFO" id="DFI-vU-mCs"/>
                         <outlet property="plLbl" destination="g85-sQ-NJy" id="i7O-PI-cSM"/>
                         <outlet property="slLbl" destination="h8I-S0-Os6" id="TO5-Ye-1UA"/>
-                        <outlet property="totalAbsentLbl" destination="dtd-xJ-Nin" id="fDg-aX-a20"/>
-                        <outlet property="totalPresentLbl" destination="noQ-k0-ej4" id="BSk-P7-jxJ"/>
+                        <outlet property="totalAbsentButton" destination="dtd-xJ-Nin" id="vVk-ak-6Hm"/>
+                        <outlet property="totalPresentButton" destination="noQ-k0-ej4" id="760-1g-C7O"/>
+                        <outlet property="totalTasksButton" destination="xLa-V9-AQV" id="yUq-GL-MVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -499,6 +500,7 @@
                                             <outlet property="nameLbl" destination="dXH-ty-XL1" id="aic-rt-egt"/>
                                             <outlet property="requestedByLbl" destination="eTb-v7-ki7" id="lJd-vf-80M"/>
                                             <outlet property="requestedOnLbl" destination="dVD-rX-yVT" id="dBo-m1-161"/>
+                                            <outlet property="subjectLbl" destination="Bei-ks-Xss" id="Tth-WV-Pv8"/>
                                             <segue destination="8fT-ZF-5gB" kind="show" id="qCc-JO-OVi"/>
                                         </connections>
                                     </tableViewCell>
@@ -513,6 +515,9 @@
                         <viewLayoutGuide key="safeArea" id="w6W-X6-zEP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="YgF-N5-yQ6"/>
+                    <connections>
+                        <outlet property="tableView" destination="v79-np-F08" id="hNX-6n-9Wl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTd-3q-t7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -942,7 +947,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2hB-Pr-7Nk">
-                                                    <rect key="frame" x="84" y="23" width="228" height="52"/>
+                                                    <rect key="frame" x="84" y="23" width="139.5" height="52"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29 Aug, 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp9-q9-EEC">
                                                             <rect key="frame" x="0.0" y="0.0" width="129.5" height="26.5"/>
@@ -950,8 +955,8 @@
                                                             <color key="textColor" red="0.58033508060000005" green="0.5804334283" blue="0.58031421900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not well due to severe migraine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yo-Ea-Ljb">
-                                                            <rect key="frame" x="0.0" y="32.5" width="228" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 AM - 6:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yo-Ea-Ljb">
+                                                            <rect key="frame" x="0.0" y="32.5" width="139.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.58033508060000005" green="0.5804334283" blue="0.58031421900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1008,7 +1013,7 @@
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="THIS MONTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4o-Hc-fLI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="THIS MONTH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4o-Hc-fLI">
                                         <rect key="frame" x="132" y="17" width="121" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
@@ -1072,6 +1077,14 @@
                         <viewLayoutGuide key="safeArea" id="6hu-vh-vXt"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Attendance" id="swu-HQ-Pso"/>
+                    <connections>
+                        <outlet property="absentLbl" destination="UT7-1T-zY5" id="eSL-YK-w9o"/>
+                        <outlet property="holidayLbl" destination="iHq-N2-evo" id="FAL-GN-H7J"/>
+                        <outlet property="monthNameLbl" destination="Q4o-Hc-fLI" id="VzP-UT-JCG"/>
+                        <outlet property="presentLbl" destination="hxp-NV-Dsv" id="Vdy-xE-AdH"/>
+                        <outlet property="tableView" destination="gm2-fQ-orX" id="s26-kN-nrk"/>
+                        <outlet property="totalLbl" destination="rBc-5h-e8p" id="YeJ-Ra-yDT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDa-bn-Goc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
