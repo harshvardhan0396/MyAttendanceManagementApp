@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A5C41282468F9E90066938C /* TestButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C41272468F9E30066938C /* TestButtonViewController.swift */; };
+		3A5C412A2468FA620066938C /* TestButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C41292468FA620066938C /* TestButtonTableViewCell.swift */; };
 		3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A635A1A2458583D0053DC9E /* DataManager.swift */; };
 		3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A679C882450189F00C3AFE4 /* ButtonBorder.swift */; };
 		3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A766278244D810400862004 /* MyLeavesViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A5C41272468F9E30066938C /* TestButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonViewController.swift; sourceTree = "<group>"; };
+		3A5C41292468FA620066938C /* TestButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonTableViewCell.swift; sourceTree = "<group>"; };
 		3A635A1A2458583D0053DC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A679C882450189F00C3AFE4 /* ButtonBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
 		3A766278244D810400862004 /* MyLeavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeavesViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				3A9A7B45245142640068FD95 /* UIViewRoundCorner.swift */,
 				3AB9858724617A5100ADAFAE /* RootAPI.swift */,
 				3AB985892461A41700ADAFAE /* GreetUser.swift */,
+				3A5C41272468F9E30066938C /* TestButtonViewController.swift */,
+				3A5C41292468FA620066938C /* TestButtonTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 				3A8726092447142000B26E56 /* ApproveLeaveViewController.swift in Sources */,
 				3AAB055224447AFC00DD3116 /* SceneDelegate.swift in Sources */,
 				3A78FD4C24484E9A007BE656 /* TestViewController.swift in Sources */,
+				3A5C412A2468FA620066938C /* TestButtonTableViewCell.swift in Sources */,
 				3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */,
 				3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */,
 				3A76627F244DE01400862004 /* MyAttendanceViewController.swift in Sources */,
@@ -304,6 +311,7 @@
 				3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */,
 				3A76627B244D816D00862004 /* MyLeavesTableViewCell.swift in Sources */,
 				3AB9858824617A5200ADAFAE /* RootAPI.swift in Sources */,
+				3A5C41282468F9E90066938C /* TestButtonViewController.swift in Sources */,
 				3ACC9357245FEACB00D2CB25 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
