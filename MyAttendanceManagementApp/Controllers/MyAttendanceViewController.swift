@@ -59,6 +59,7 @@ extension MyAttendanceViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyAttendanceTableViewCell
+        cell?.cellImage.image = UIImage(named :attendanceData[indexPath.row].image)
         cell?.dateLabel.text = attendanceData[indexPath.row].date
         cell?.timeLabel.text = attendanceData[indexPath.row].time
         cell?.selectionStyle = .none
