@@ -22,20 +22,16 @@ class MyLeavesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func controlButton(_ sender: UIButton) {
-        sender.backgroundColor = .clear
         if(sender.tag == 1){
-            sender.backgroundColor = .systemPink
             leaveArray.removeAll()
             self.getLeavesData(endPoint: "/leaves/pl/approved/1")
             
         }
         else if(sender.tag == 2){
-            sender.backgroundColor = .systemPink
             leaveArray.removeAll()
             self.getLeavesData(endPoint: "/leaves/pl/pending/1")
         }
         else if(sender.tag == 3){
-            sender.backgroundColor = .systemPink
             leaveArray.removeAll()
             self.getLeavesData(endPoint: "/leaves/pl/rejected/1")
         }
@@ -45,6 +41,10 @@ class MyLeavesViewController: UIViewController {
 //    @IBOutlet weak var rejectedButtonPressed: UIButton!
 //    @IBOutlet weak var approvedButtonPressed: UIButton!
 //    @IBOutlet weak var pendingButtonPressed: UIButton!
+    
+//   self.rejectedButtonPressed.setImage(UIImage.remapColor(UIColor.white, maskImage: UIImage(named: "nBg.png")), for: .normal)
+    
+//    approvedButtonPressed.backgroundColor = .black
     
     override func viewDidLoad() {
         super.viewDidLoad()

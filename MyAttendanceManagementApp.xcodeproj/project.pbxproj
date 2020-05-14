@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A5C41282468F9E90066938C /* TestButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C41272468F9E30066938C /* TestButtonViewController.swift */; };
-		3A5C412A2468FA620066938C /* TestButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C41292468FA620066938C /* TestButtonTableViewCell.swift */; };
+		3A5C41282468F9E90066938C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C41272468F9E30066938C /* MyProfileViewController.swift */; };
 		3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A635A1A2458583D0053DC9E /* DataManager.swift */; };
 		3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A679C882450189F00C3AFE4 /* ButtonBorder.swift */; };
 		3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A766278244D810400862004 /* MyLeavesViewController.swift */; };
@@ -20,7 +19,6 @@
 		3A8726072446ED9E00B26E56 /* MyTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726062446ED9E00B26E56 /* MyTaskTableViewCell.swift */; };
 		3A8726092447142000B26E56 /* ApproveLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */; };
 		3A87260B244731D400B26E56 /* ApplyForLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */; };
-		3A8AE3EF244992BF0034AC37 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AE3EE244992BE0034AC37 /* TestTableViewCell.swift */; };
 		3A9A7B46245142650068FD95 /* UIViewRoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A7B45245142640068FD95 /* UIViewRoundCorner.swift */; };
 		3AAB055024447AFC00DD3116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB054F24447AFC00DD3116 /* AppDelegate.swift */; };
 		3AAB055224447AFC00DD3116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB055124447AFC00DD3116 /* SceneDelegate.swift */; };
@@ -37,8 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A5C41272468F9E30066938C /* TestButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonViewController.swift; sourceTree = "<group>"; };
-		3A5C41292468FA620066938C /* TestButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonTableViewCell.swift; sourceTree = "<group>"; };
+		3A5C41272468F9E30066938C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		3A635A1A2458583D0053DC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A679C882450189F00C3AFE4 /* ButtonBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
 		3A766278244D810400862004 /* MyLeavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeavesViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +47,6 @@
 		3A8726062446ED9E00B26E56 /* MyTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskTableViewCell.swift; sourceTree = "<group>"; };
 		3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveLeaveViewController.swift; sourceTree = "<group>"; };
 		3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyForLeaveViewController.swift; sourceTree = "<group>"; };
-		3A8AE3EE244992BE0034AC37 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		3A9A7B45245142640068FD95 /* UIViewRoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundCorner.swift; sourceTree = "<group>"; };
 		3AAB054C24447AFC00DD3116 /* MyAttendanceManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAttendanceManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAB054F24447AFC00DD3116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,7 +139,6 @@
 				3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */,
 				3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */,
 				3A78FD4B24484E9A007BE656 /* TestViewController.swift */,
-				3A8AE3EE244992BE0034AC37 /* TestTableViewCell.swift */,
 				3A766278244D810400862004 /* MyLeavesViewController.swift */,
 				3A76627A244D816D00862004 /* MyLeavesTableViewCell.swift */,
 				3A76627C244DDFBD00862004 /* MyAttendanceTableViewCell.swift */,
@@ -152,8 +147,7 @@
 				3A9A7B45245142640068FD95 /* UIViewRoundCorner.swift */,
 				3AB9858724617A5100ADAFAE /* RootAPI.swift */,
 				3AB985892461A41700ADAFAE /* GreetUser.swift */,
-				3A5C41272468F9E30066938C /* TestButtonViewController.swift */,
-				3A5C41292468FA620066938C /* TestButtonTableViewCell.swift */,
+				3A5C41272468F9E30066938C /* MyProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,18 +294,16 @@
 				3A8726092447142000B26E56 /* ApproveLeaveViewController.swift in Sources */,
 				3AAB055224447AFC00DD3116 /* SceneDelegate.swift in Sources */,
 				3A78FD4C24484E9A007BE656 /* TestViewController.swift in Sources */,
-				3A5C412A2468FA620066938C /* TestButtonTableViewCell.swift in Sources */,
 				3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */,
 				3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */,
 				3A76627F244DE01400862004 /* MyAttendanceViewController.swift in Sources */,
 				3AB9858A2461A41700ADAFAE /* GreetUser.swift in Sources */,
 				3A87260B244731D400B26E56 /* ApplyForLeaveViewController.swift in Sources */,
 				3A9A7B46245142650068FD95 /* UIViewRoundCorner.swift in Sources */,
-				3A8AE3EF244992BF0034AC37 /* TestTableViewCell.swift in Sources */,
 				3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */,
 				3A76627B244D816D00862004 /* MyLeavesTableViewCell.swift in Sources */,
 				3AB9858824617A5200ADAFAE /* RootAPI.swift in Sources */,
-				3A5C41282468F9E90066938C /* TestButtonViewController.swift in Sources */,
+				3A5C41282468F9E90066938C /* MyProfileViewController.swift in Sources */,
 				3ACC9357245FEACB00D2CB25 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

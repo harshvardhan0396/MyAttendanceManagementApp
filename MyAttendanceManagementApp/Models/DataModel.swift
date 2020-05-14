@@ -11,10 +11,14 @@ import Foundation
 
 //baseURL + /employee
 struct EmployeeData: Decodable{
+    var image: String
     var employeeName: String
-    var employeeId: Int
-    var employeeNumber: Int
-    var employeeEmail: String
+    var post: String
+    var id: Int
+    var number: Int
+    var email: String
+    var bloodGroup: String
+    var city: String
 }
 
 //baseURL + /leaves
