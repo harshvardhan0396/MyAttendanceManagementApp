@@ -42,17 +42,14 @@ class ApplyForLeaveViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         leavetypePicker.inputView = pickerView
-
     }
     
-
 }
 
 extension ApplyForLeaveViewController: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-       
-        
+
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
 
@@ -80,6 +77,7 @@ extension ApplyForLeaveViewController: UITextFieldDelegate{
         datePicker.datePickerMode = .date
         
     }
+    
     @objc func cancelButtonClicked(){
         fromDateText.resignFirstResponder()
         toDateText.resignFirstResponder()

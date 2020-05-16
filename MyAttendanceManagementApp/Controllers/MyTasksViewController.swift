@@ -15,16 +15,11 @@ class MyTasksViewController: UIViewController {
     var getData = GetDataFromAPI()
     var totalTasks: Int = 0
     
-//    var requestedDateArr = []()
-//
-//    var requestedByArr = []()
     
     var tasksData = [Tasks]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getTasksData()
-
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -39,7 +34,6 @@ extension MyTasksViewController{
                     self.tableView?.reloadData()
                 }
             }
-            //print([self.tasksData])
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A47F97A246DBB71004F8CEC /* gify.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A47F979246DBB71004F8CEC /* gify.gif */; };
 		3A5C41282468F9E90066938C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C41272468F9E30066938C /* MyProfileViewController.swift */; };
 		3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A635A1A2458583D0053DC9E /* DataManager.swift */; };
 		3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A679C882450189F00C3AFE4 /* ButtonBorder.swift */; };
@@ -27,7 +28,6 @@
 		3AAB055924447B3F00DD3116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB055824447B3F00DD3116 /* Assets.xcassets */; };
 		3AAB055C24447B3F00DD3116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB055A24447B3F00DD3116 /* LaunchScreen.storyboard */; };
 		3AAB05672444873F00DD3116 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB05662444873F00DD3116 /* WelcomeViewController.swift */; };
-		3AAB05692444A62300DD3116 /* gify.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB05682444A61B00DD3116 /* gify.gif */; };
 		3AB9858824617A5200ADAFAE /* RootAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9858724617A5100ADAFAE /* RootAPI.swift */; };
 		3AB9858A2461A41700ADAFAE /* GreetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB985892461A41700ADAFAE /* GreetUser.swift */; };
 		3ACC9357245FEACB00D2CB25 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC9356245FEACB00D2CB25 /* DataModel.swift */; };
@@ -35,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A47F979246DBB71004F8CEC /* gify.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gify.gif; sourceTree = "<group>"; };
 		3A5C41272468F9E30066938C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		3A635A1A2458583D0053DC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A679C882450189F00C3AFE4 /* ButtonBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		3AAB055B24447B3F00DD3116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AAB055D24447B3F00DD3116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AAB05662444873F00DD3116 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		3AAB05682444A61B00DD3116 /* gify.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = gify.gif; path = ../../images/gify.gif; sourceTree = "<group>"; };
 		3AB9858724617A5100ADAFAE /* RootAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAPI.swift; sourceTree = "<group>"; };
 		3AB985892461A41700ADAFAE /* GreetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetUser.swift; sourceTree = "<group>"; };
 		3ACC9356245FEACB00D2CB25 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				3AAB056324447D7600DD3116 /* Controllers */,
 				3A7D94F1244584A9005C00B6 /* Views */,
 				3AAB055824447B3F00DD3116 /* Assets.xcassets */,
-				3AAB05682444A61B00DD3116 /* gify.gif */,
+				3A47F979246DBB71004F8CEC /* gify.gif */,
 				3AAB055A24447B3F00DD3116 /* LaunchScreen.storyboard */,
 				3AAB055D24447B3F00DD3116 /* Info.plist */,
 			);
@@ -232,7 +232,7 @@
 				3AAB055C24447B3F00DD3116 /* LaunchScreen.storyboard in Resources */,
 				3AAB055924447B3F00DD3116 /* Assets.xcassets in Resources */,
 				3AAB055724447AFC00DD3116 /* Main.storyboard in Resources */,
-				3AAB05692444A62300DD3116 /* gify.gif in Resources */,
+				3A47F97A246DBB71004F8CEC /* gify.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

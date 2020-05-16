@@ -17,7 +17,6 @@ class HomeViewController: UIViewController{
     var displayDateAndGreetings = DateAndGreetings()
     
     @IBOutlet weak var dateAndWeekDayLbl: UILabel!
-    @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var greetLbl: UILabel!
     @IBOutlet weak var employeeNameLbl: UILabel!
     
@@ -40,13 +39,7 @@ class HomeViewController: UIViewController{
         greetLbl.text = displayDateAndGreetings.greetUser()
         navigationItem.hidesBackButton = true
         self.presentDataToHomePage()
-        callTasksFunction.getTasksData()
-        callAttendanceFunction.getAttendanceSummaryData()
-        //callAttendanceFunction.getAttendanceData()
     }
-        
-    
-    
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
@@ -57,13 +50,15 @@ extension HomeViewController{
     
     func presentDataToHomePage(){
         
+        
+        //getting employee data
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/employee")!, resultType: EmployeeData.self){(employeeResponse) in
             DispatchQueue.main.async{
                 self.employeeNameLbl.text = employeeResponse.employeeName
             }
         }
 
-
+        //getting leave data
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/leaves")!, resultType: LeavesCount.self){(leavesResponse) in
             DispatchQueue.main.async{
                 self.clLbl.text = String(leavesResponse.cl)
@@ -71,7 +66,9 @@ extension HomeViewController{
                 self.plLbl.text = String(leavesResponse.pl)
             }
         }
-
+        
+        
+        //getting attendance data
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/attendance/4")!, resultType: Attendnace.self){(attendanceResponse) in
                 DispatchQueue.main.async{
                     self.totalPresentButton.setTitle("\(attendanceResponse.present)", for: .normal)
@@ -79,6 +76,8 @@ extension HomeViewController{
                 }
         }
         
+        
+        //getting holiday data
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/holiday/4")!, resultType: Holiday.self){(holidayResponse) in
                 DispatchQueue.main.async{
                     self.holidayDateLbl.text =  String(holidayResponse.date)
@@ -86,9 +85,6 @@ extension HomeViewController{
                     self.holidayWeekDayLbl.text =  holidayResponse.day
                 }
         }
-        
-        //self.totalTasksButton.setTitle("\(callFunction.totalTasks)", for: .normal)
-        
 
     }
 
