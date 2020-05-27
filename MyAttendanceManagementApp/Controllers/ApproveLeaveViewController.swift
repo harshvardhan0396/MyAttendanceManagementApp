@@ -29,16 +29,16 @@ class ApproveLeaveViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.nameTextField.addBottomBorder()
-        self.fromDateTextField.addBottomBorder()
-        self.leaveTypeTextField.addBottomBorder()
-        self.totalDaysTextField.addBottomBorder()
-        self.toDateTextField.addBottomBorder()
-        self.totalDaysTextField.addBottomBorder()
-        self.rejectionTextField.addBottomBorder()
-        self.reasonTextField.addBottomBorder()
-        self.getApproveLeaveData()
+//        self.nameTextField.addBottomBorder()
+//        self.fromDateTextField.addBottomBorder()
+//        self.leaveTypeTextField.addBottomBorder()
+//        self.totalDaysTextField.addBottomBorder()
+//        self.toDateTextField.addBottomBorder()
+//        self.totalDaysTextField.addBottomBorder()
+//        self.rejectionTextField.addBottomBorder()
+//        self.reasonTextField.addBottomBorder()
         
+        self.getApproveLeaveData()
      }
 }
 

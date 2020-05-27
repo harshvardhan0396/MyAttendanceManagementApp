@@ -12,8 +12,6 @@ class HomeViewController: UIViewController{
     
     var rootAPI = RootAPI()
     var getData = GetDataFromAPI()
-    var callTasksFunction = MyTasksViewController()
-    var callAttendanceFunction = MyAttendanceViewController()
     var displayDateAndGreetings = DateAndGreetings()
     
     @IBOutlet weak var dateAndWeekDayLbl: UILabel!

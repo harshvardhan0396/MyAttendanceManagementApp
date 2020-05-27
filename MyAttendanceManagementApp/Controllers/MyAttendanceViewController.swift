@@ -22,17 +22,52 @@ class MyAttendanceViewController: UIViewController {
     @IBOutlet weak var absentLbl: UILabel!
     @IBOutlet weak var holidayLbl: UILabel!
     
+    var currentMonth = 5
+    //var newMonth = 5
+    @IBAction func changeMonth(_ sender: UIButton) {
+        
+        //print(currentMonth)
+        if (sender.tag == 1){
+            currentMonth = currentMonth-1
+        }
+        else if(sender.tag == 2){
+            currentMonth = currentMonth+1
+        }
+        checkMonth(monthId: currentMonth)
+        
+    }
+    
+    func checkMonth(monthId: Int){
+        print(monthId)
+        if(monthId == 5){
+            attendanceData.removeAll()
+            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryMay/5")
+        }
+        else if(monthId == 4){
+            attendanceData.removeAll()
+            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryApril/4")
+        }
+        else if(monthId == 6){
+            attendanceData.removeAll()
+            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryJune/6")
+        }
+        else{
+            print("no data available...")
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getAttendanceSummaryData()
+        self.getAttendanceSummaryData(endPoint: "/attendanceSummaryMay/5")
     }
     
 
 }
 
 extension MyAttendanceViewController{
-    func getAttendanceSummaryData(){
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/attendanceSummary/4")!, resultType: AttendanceSummary.self){
+    func getAttendanceSummaryData(endPoint: String){
+        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: AttendanceSummary.self){
             (attendanceSummaryResponse) in
             DispatchQueue.main.async{
                 self.monthNameLbl?.text = attendanceSummaryResponse.monthName
@@ -62,8 +97,12 @@ extension MyAttendanceViewController: UITableViewDelegate, UITableViewDataSource
         cell?.cellImage.image = UIImage(named :attendanceData[indexPath.row].image)
         cell?.dateLabel.text = attendanceData[indexPath.row].date
         cell?.timeLabel.text = attendanceData[indexPath.row].time
+        
+        //tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+        
         cell?.selectionStyle = .none
         return cell!
     }
     
+ 
 }

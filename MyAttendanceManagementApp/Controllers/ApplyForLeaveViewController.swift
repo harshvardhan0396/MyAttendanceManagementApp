@@ -26,12 +26,12 @@ class ApplyForLeaveViewController: UIViewController {
         super.viewDidLoad()
         
         //for adding border
-        self.leavetypePicker.addBottomBorder()
-        self.fromDateText.addBottomBorder()
-        self.toDateText.addBottomBorder()
-        self.appliedByTextField.addBottomBorder()
-        self.totalDaysTextField.addBottomBorder()
-        self.reasonTextView.addBottomBorder()
+        //self.leavetypePicker.addBottomBorder()
+        //self.fromDateText.addBottomBorder()
+        //self.toDateText.addBottomBorder()
+//        self.appliedByTextField.addBottomBorder()
+//        self.totalDaysTextField.addBottomBorder()
+//        self.reasonTextView.addBottomBorder()
         
         //for date picker
         fromDateText.delegate = self
