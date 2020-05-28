@@ -20,19 +20,19 @@ class ApplyForLeaveViewController: UIViewController {
     @IBOutlet weak var totalDaysTextField: UITextField!
     @IBOutlet weak var appliedByTextField: UITextField!
     
+    
+    @IBOutlet weak var applyButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //for adding border
-        //self.leavetypePicker.addBottomBorder()
-        //self.fromDateText.addBottomBorder()
-        //self.toDateText.addBottomBorder()
-//        self.appliedByTextField.addBottomBorder()
-//        self.totalDaysTextField.addBottomBorder()
-//        self.reasonTextView.addBottomBorder()
         
+        applyButton.cornerRadius()
+        cancelButton.cornerRadius()
+                
         //for date picker
         fromDateText.delegate = self
         toDateText.delegate = self

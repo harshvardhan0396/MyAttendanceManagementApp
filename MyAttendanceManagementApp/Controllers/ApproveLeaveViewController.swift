@@ -15,19 +15,23 @@ class ApproveLeaveViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var fromDateTextField: UITextField!
-    
     @IBOutlet weak var toDateTextField: UITextField!
-    
     @IBOutlet weak var leaveTypeTextField: UITextField!
-    
     @IBOutlet weak var totalDaysTextField: UITextField!
-    
     @IBOutlet weak var reasonTextField: UITextView!
-    
     @IBOutlet weak var rejectionTextField: UITextView!
+    
+    
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var applyButton: UIButton!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        applyButton.cornerRadius()
+        cancelButton.cornerRadius()
         
 //        self.nameTextField.addBottomBorder()
 //        self.fromDateTextField.addBottomBorder()

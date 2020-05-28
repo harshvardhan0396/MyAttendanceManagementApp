@@ -12,22 +12,25 @@ import CLTypingLabel
 
 class WelcomeViewController: UIViewController {
 
-//@IBOutlet weak var gifImageView: UIImageView!
+    
     //@IBOutlet weak var welcomeLbl: CLTypingLabel!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    //@IBAction func loginButtonPressed(_ sender: Any) {
-    //}
+    @IBOutlet weak var loginButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //welcomeLbl.text = "My Attendance Management App"
-        //gifImageView.loadGif(name: "gify")
         
-        //self.userNameTextField.addBottomBorder()
-        //self.passwordTextField.addBottomBorder()
+        loginButton.cornerRadius()
+        
     }
     
 }
 
+extension UIButton{
+    func cornerRadius(){
+        layer.cornerRadius = 5
+    }
+}
