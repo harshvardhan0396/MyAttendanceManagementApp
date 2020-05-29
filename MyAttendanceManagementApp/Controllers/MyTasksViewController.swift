@@ -46,7 +46,7 @@ extension MyTasksViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyTaskTableViewCell
-            cell?.leaveImage.image = UIImage(named :tasksData[indexPath.row].image)
+            cell?.viewLabel.text = tasksData[indexPath.row].viewLabel
             cell?.subjectLbl.text = tasksData[indexPath.row].subject
             cell?.dateLbl.text = tasksData[indexPath.row].requestedOn
             cell?.nameLbl.text = tasksData[indexPath.row].requestedBy

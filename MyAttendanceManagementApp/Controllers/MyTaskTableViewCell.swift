@@ -8,10 +8,15 @@
 
 import UIKit
 
+var cellViewColor = CellViewColor()
+
 class MyTaskTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var leaveImage: UIImageView!
+   // @IBOutlet weak var leaveImage: UIImageView!
+    
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var viewLabel: UILabel!
     
     @IBOutlet weak var mainHeading: UILabel!
     
@@ -23,8 +28,18 @@ class MyTaskTableViewCell: UITableViewCell {
     @IBOutlet weak var requestedByLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     override func layoutSubviews() {
-        leaveImage.layer.cornerRadius = leaveImage.bounds.height / 2
-        leaveImage.clipsToBounds = true
+        cellView.layer.cornerRadius = cellView.bounds.height / 2
+        if(viewLabel.text == "SL"){
+            viewLabel.textColor = UIColor.systemRed
+            cellView.layer.borderColor = UIColor.red.cgColor
+        }
+        else if (viewLabel.text == "PL"){
+            viewLabel.textColor = UIColor.systemGreen
+            
+        }
+        else if (viewLabel.text == "CL"){
+            viewLabel.textColor = UIColor.systemPurple
+        }
     }
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,14 +10,26 @@ import UIKit
 
 class MyLeavesTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellImage: UIImageView!
+    //@IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellDateLabel: UILabel!
     @IBOutlet weak var cellReasonLabel: UILabel!
     
+    
+    @IBOutlet weak var cellView: UIViewRoundCorner!
+    @IBOutlet weak var viewLabel: UILabel!
     override func layoutSubviews() {
-        cellImage.layer.cornerRadius = cellImage.bounds.height / 2
-        cellImage.clipsToBounds = true
-    }
+        cellView.layer.cornerRadius = cellView.bounds.height / 2
+        if(viewLabel.text == "SL"){
+            viewLabel.textColor = UIColor.systemRed
+            cellView.layer.borderColor = UIColor.red.cgColor
+        }
+        else if (viewLabel.text == "PL"){
+            viewLabel.textColor = UIColor.systemGreen
+            cellView.layer.borderColor = UIColor.systemGreen.cgColor
+        }
+        else if (viewLabel.text == "CL"){
+            viewLabel.textColor = UIColor.systemPurple
+        }    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

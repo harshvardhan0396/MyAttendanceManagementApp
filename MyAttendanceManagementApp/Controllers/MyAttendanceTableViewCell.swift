@@ -10,13 +10,30 @@ import UIKit
 
 class MyAttendanceTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var cellView: UIViewRoundCorner!
+    @IBOutlet weak var viewLabel: UILabel!
+    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     override func layoutSubviews() {
-        cellImage.layer.cornerRadius = cellImage.bounds.height / 2
-        cellImage.clipsToBounds = true
+        cellView.layer.cornerRadius = cellView.bounds.height / 2
+        if(viewLabel.text == "A"){
+            viewLabel.textColor = UIColor.systemRed
+            cellView.layer.borderColor = UIColor.red.cgColor
+        }
+        else if (viewLabel.text == "P"){
+            viewLabel.textColor = UIColor.systemGreen
+            cellView.layer.borderColor = UIColor.systemGreen.cgColor
+        }
+        else if (viewLabel.text == "H"){
+            viewLabel.textColor = UIColor.systemPurple
+            cellView.layer.borderColor = UIColor.systemPurple.cgColor
+        }
+        else if (viewLabel.text == "NA"){
+            viewLabel.textColor = UIColor.darkGray
+            cellView.layer.borderColor = UIColor.darkGray.cgColor
+        }
     }
 
     override func awakeFromNib() {

@@ -66,7 +66,7 @@ extension MyLeavesViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyLeavesTableViewCell
-        cell?.cellImage.image = UIImage(named :leaveArray[indexPath.row].image)
+        cell?.viewLabel.text = leaveArray[indexPath.row].viewLabel
         cell?.cellDateLabel.text = leaveArray[indexPath.row].date
         cell?.cellReasonLabel.text = leaveArray[indexPath.row].subject
         cell?.selectionStyle = .none

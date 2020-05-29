@@ -15,6 +15,7 @@
 		3A76627B244D816D00862004 /* MyLeavesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76627A244D816D00862004 /* MyLeavesTableViewCell.swift */; };
 		3A76627D244DDFBE00862004 /* MyAttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76627C244DDFBD00862004 /* MyAttendanceTableViewCell.swift */; };
 		3A76627F244DE01400862004 /* MyAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76627E244DE01400862004 /* MyAttendanceViewController.swift */; };
+		3A7C9962247FDFD900635DBA /* CellViewColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C9961247FDFD900635DBA /* CellViewColor.swift */; };
 		3A8726052446E91E00B26E56 /* MyTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726042446E91E00B26E56 /* MyTasksViewController.swift */; };
 		3A8726072446ED9E00B26E56 /* MyTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726062446ED9E00B26E56 /* MyTaskTableViewCell.swift */; };
 		3A8726092447142000B26E56 /* ApproveLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */; };
@@ -42,6 +43,7 @@
 		3A76627A244D816D00862004 /* MyLeavesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeavesTableViewCell.swift; sourceTree = "<group>"; };
 		3A76627C244DDFBD00862004 /* MyAttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		3A76627E244DE01400862004 /* MyAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAttendanceViewController.swift; sourceTree = "<group>"; };
+		3A7C9961247FDFD900635DBA /* CellViewColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewColor.swift; sourceTree = "<group>"; };
 		3A8726042446E91E00B26E56 /* MyTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTasksViewController.swift; sourceTree = "<group>"; };
 		3A8726062446ED9E00B26E56 /* MyTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskTableViewCell.swift; sourceTree = "<group>"; };
 		3A8726082447142000B26E56 /* ApproveLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveLeaveViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				3AB9858724617A5100ADAFAE /* RootAPI.swift */,
 				3AB985892461A41700ADAFAE /* GreetUser.swift */,
 				3A5C41272468F9E30066938C /* MyProfileViewController.swift */,
+				3A7C9961247FDFD900635DBA /* CellViewColor.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7C9962247FDFD900635DBA /* CellViewColor.swift in Sources */,
 				3A76627D244DDFBE00862004 /* MyAttendanceTableViewCell.swift in Sources */,
 				3A8726072446ED9E00B26E56 /* MyTaskTableViewCell.swift in Sources */,
 				3A8726052446E91E00B26E56 /* MyTasksViewController.swift in Sources */,

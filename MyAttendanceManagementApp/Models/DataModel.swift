@@ -36,7 +36,7 @@ struct LeavesBase: Decodable{
 }
 
 struct Leave: Decodable{
-    var image: String
+    var viewLabel: String
     var subject: String
     var date: String
 }
@@ -49,7 +49,7 @@ struct TaskBase: Decodable{
 }
 
 struct Tasks: Decodable{
-    var image : String
+    var viewLabel : String
     var subject : String
     var requestedBy : String
     var requestedOn : String
@@ -85,7 +85,7 @@ struct AttendanceSummary: Decodable{
 
 struct AttendanceData: Decodable{
     var attendanceType: String
-    var image: String
+    var viewLabel: String
     var date: String
     var time: String
 }
