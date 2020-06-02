@@ -39,13 +39,13 @@ class MyAttendanceViewController: UIViewController {
     
     func checkMonth(monthId: Int){
         print(monthId)
-        if(monthId == 5){
-            attendanceData.removeAll()
-            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryMay/5")
-        }
-        else if(monthId == 4){
+        if(monthId == 4){
             attendanceData.removeAll()
             self.getAttendanceSummaryData(endPoint: "/attendanceSummaryApril/4")
+        }
+        else if(monthId == 5){
+            attendanceData.removeAll()
+            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryMay/5")
         }
         else if(monthId == 6){
             attendanceData.removeAll()
@@ -67,6 +67,7 @@ class MyAttendanceViewController: UIViewController {
 
 extension MyAttendanceViewController{
     func getAttendanceSummaryData(endPoint: String){
+        let loader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: AttendanceSummary.self){
             (attendanceSummaryResponse) in
             DispatchQueue.main.async{
@@ -82,6 +83,7 @@ extension MyAttendanceViewController{
                         self.tableView?.reloadData()
                     }
                 }
+                self.stopLoader(loader: loader)
             }
         }
     }

@@ -30,8 +30,8 @@ class MyTaskTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         cellView.layer.cornerRadius = cellView.bounds.height / 2
         if(viewLabel.text == "SL"){
-            viewLabel.textColor = UIColor.systemRed
-            cellView.layer.borderColor = UIColor.red.cgColor
+            viewLabel.textColor = UIColor(hex: "#ffe700ff")
+            cellView.layer.borderColor = UIColor(hex: "#ffe700ff")?.cgColor
         }
         else if (viewLabel.text == "PL"){
             viewLabel.textColor = UIColor.systemGreen

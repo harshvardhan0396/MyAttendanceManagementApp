@@ -34,7 +34,7 @@ class MyProfileViewController: UIViewController {
 extension MyProfileViewController{
 
     func employeeProfileData(){
-        
+        let loader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/employee")!, resultType: EmployeeData.self){(employeeProfileResponse) in
             DispatchQueue.main.async{
                 self.image.image = UIImage(named: employeeProfileResponse.image)!
@@ -45,6 +45,7 @@ extension MyProfileViewController{
                 self.email.text = employeeProfileResponse.email
                 self.bloodGroup.text = employeeProfileResponse.bloodGroup
                 self.city.text = employeeProfileResponse.city
+                self.stopLoader(loader: loader)
             }
         }
     }

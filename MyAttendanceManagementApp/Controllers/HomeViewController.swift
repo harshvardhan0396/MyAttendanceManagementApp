@@ -14,6 +14,8 @@ class HomeViewController: UIViewController{
     var getData = GetDataFromAPI()
     var displayDateAndGreetings = DateAndGreetings()
     
+    
+    
     @IBOutlet weak var dateAndWeekDayLbl: UILabel!
     @IBOutlet weak var greetLbl: UILabel!
     @IBOutlet weak var employeeNameLbl: UILabel!
@@ -36,23 +38,43 @@ class HomeViewController: UIViewController{
         dateAndWeekDayLbl.text = displayDateAndGreetings.getDateAndWeekDay()
         greetLbl.text = displayDateAndGreetings.greetUser()
         navigationItem.hidesBackButton = true
-        self.presentDataToHomePage()
+        //self.presentDataToHomePage()
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //let loader = self.alertIndicator()
+        if(CheckInternet.Connection()){
+            print("Internet is Connected")
+            self.presentDataToHomePage()
+        }
+        else{
+            alertMessage()
+        }
+    }
+    
+    func alertMessage(){
+        let alert = UIAlertController(title: "WARNING", message: "Make sure your network is connected", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension HomeViewController{
     
     func presentDataToHomePage(){
         
-        
+        let loader = self.alertIndicator()
         //getting employee data
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/employee")!, resultType: EmployeeData.self){(employeeResponse) in
             DispatchQueue.main.async{
                 self.employeeNameLbl.text = employeeResponse.employeeName
+                self.stopLoader(loader: loader)
             }
         }
 

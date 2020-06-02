@@ -45,12 +45,14 @@ class MyLeavesViewController: UIViewController {
 extension MyLeavesViewController{
     
     func getLeavesData(endPoint: String){
+        let loader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: [Leave].self){
             (leavesResponse) in
             for arr in leavesResponse{
                 self.leaveArray.append(arr)
                 DispatchQueue.main.async{
                     self.tableView?.reloadData()
+                    self.stopLoader(loader: loader)
                 }
             }
         }

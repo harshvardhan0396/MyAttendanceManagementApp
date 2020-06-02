@@ -27,6 +27,21 @@ class WelcomeViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if(CheckInternet.Connection()){
+            print("Internet is Connected")
+        }
+        else{
+            alertMessage()
+        }
+    }
+    
+    func alertMessage(){
+        let alert = UIAlertController(title: "WARNING", message: "Make sure your network is connected", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension UIButton{
