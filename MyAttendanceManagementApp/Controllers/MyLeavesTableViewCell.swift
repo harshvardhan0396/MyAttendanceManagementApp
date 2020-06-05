@@ -20,16 +20,20 @@ class MyLeavesTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         cellView.layer.cornerRadius = cellView.bounds.height / 2
         if(viewLabel.text == "SL"){
-            viewLabel.textColor = UIColor.systemRed
-            cellView.layer.borderColor = UIColor.red.cgColor
+            viewLabel.textColor = UIColor(hex: "#e91f1fff") //red
+            cellView.layer.borderColor = UIColor(hex: "#e91f1fff")?.cgColor
         }
         else if (viewLabel.text == "PL"){
-            viewLabel.textColor = UIColor.systemGreen
-            cellView.layer.borderColor = UIColor.systemGreen.cgColor
+            viewLabel.textColor = UIColor(hex: "#25a534ff") //green
+            cellView.layer.borderColor = UIColor(hex: "#25a534ff")?.cgColor
+            
         }
         else if (viewLabel.text == "CL"){
-            viewLabel.textColor = UIColor.systemPurple
-        }    }
+            viewLabel.textColor = UIColor(hex: "#8228eeff") //purple
+            cellView.layer.borderColor = UIColor(hex: "#8228eeff")?.cgColor
+        }
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

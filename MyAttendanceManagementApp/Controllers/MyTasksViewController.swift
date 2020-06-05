@@ -26,17 +26,18 @@ class MyTasksViewController: UIViewController {
 extension MyTasksViewController{
     
     func getTasksData(){
-        let loader = self.alertIndicator()
+        //let myTaskLoader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/tasks")!, resultType: [Tasks].self){
             (tasksResponse) in
             for arr in tasksResponse{
                 self.tasksData.append(arr)
                 DispatchQueue.main.async{
+                    //self.stopLoader(loader: myTaskLoader)
                     self.tableView?.reloadData()
-                    self.stopLoader(loader: loader)
                 }
             }
         }
+        //self.stopLoader(loader: myTaskLoader)
     }
 }
 

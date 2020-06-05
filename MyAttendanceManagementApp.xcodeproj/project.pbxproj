@@ -12,6 +12,7 @@
 		3A347B5C248647CC0091C9A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A347B5B248647CC0091C9A3 /* UIColor.swift */; };
 		3A47F97A246DBB71004F8CEC /* gify.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A47F979246DBB71004F8CEC /* gify.gif */; };
 		3A5C41282468F9E90066938C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C41272468F9E30066938C /* MyProfileViewController.swift */; };
+		3A5F88B92488C26D003677D6 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F88B82488C26D003677D6 /* ButtonAnimation.swift */; };
 		3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A635A1A2458583D0053DC9E /* DataManager.swift */; };
 		3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A679C882450189F00C3AFE4 /* ButtonBorder.swift */; };
 		3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A766278244D810400862004 /* MyLeavesViewController.swift */; };
@@ -44,6 +45,7 @@
 		3A347B5B248647CC0091C9A3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3A47F979246DBB71004F8CEC /* gify.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gify.gif; sourceTree = "<group>"; };
 		3A5C41272468F9E30066938C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		3A5F88B82488C26D003677D6 /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 		3A635A1A2458583D0053DC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A679C882450189F00C3AFE4 /* ButtonBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
 		3A766278244D810400862004 /* MyLeavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeavesViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				3A7C9961247FDFD900635DBA /* CellViewColor.swift */,
 				3A32B9C42485346D0024695E /* AlertIndicator.swift */,
 				3A347B5B248647CC0091C9A3 /* UIColor.swift */,
+				3A5F88B82488C26D003677D6 /* ButtonAnimation.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				3A8726092447142000B26E56 /* ApproveLeaveViewController.swift in Sources */,
 				3AAB055224447AFC00DD3116 /* SceneDelegate.swift in Sources */,
 				3A635A1B2458583F0053DC9E /* DataManager.swift in Sources */,
+				3A5F88B92488C26D003677D6 /* ButtonAnimation.swift in Sources */,
 				3A87022F2480F64C00EE11A5 /* MockAPI.swift in Sources */,
 				3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */,
 				3A76627F244DE01400862004 /* MyAttendanceViewController.swift in Sources */,

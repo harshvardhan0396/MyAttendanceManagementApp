@@ -18,7 +18,12 @@ class MyLeavesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     @IBAction func controlButton(_ sender: UIButton) {
+        
+        sender.pulstate()
+        
+                    
         if(sender.tag == 1){
             leaveArray.removeAll()
             self.getLeavesData(endPoint: "/leaves/pl/approved/1")
@@ -38,6 +43,10 @@ class MyLeavesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //controlButton.layer.cornerradius = 8
+        //controlButton.setTitleColor(UIColor.grayColor, for: UIControl.State.normal)
+        
+
         self.getLeavesData(endPoint: "/leaves/pl/approved/1")
     }
 }
@@ -45,14 +54,14 @@ class MyLeavesViewController: UIViewController {
 extension MyLeavesViewController{
     
     func getLeavesData(endPoint: String){
-        let loader = self.alertIndicator()
+        //let myLeavesloader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: [Leave].self){
             (leavesResponse) in
             for arr in leavesResponse{
                 self.leaveArray.append(arr)
                 DispatchQueue.main.async{
                     self.tableView?.reloadData()
-                    self.stopLoader(loader: loader)
+                    //self.stopLoader(loader: myLeavesloader)
                 }
             }
         }

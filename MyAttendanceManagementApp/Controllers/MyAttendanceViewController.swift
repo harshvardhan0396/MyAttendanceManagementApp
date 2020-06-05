@@ -67,7 +67,7 @@ class MyAttendanceViewController: UIViewController {
 
 extension MyAttendanceViewController{
     func getAttendanceSummaryData(endPoint: String){
-        let loader = self.alertIndicator()
+        //let myAttendanceLoader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: AttendanceSummary.self){
             (attendanceSummaryResponse) in
             DispatchQueue.main.async{
@@ -83,7 +83,7 @@ extension MyAttendanceViewController{
                         self.tableView?.reloadData()
                     }
                 }
-                self.stopLoader(loader: loader)
+                //self.stopLoader(loader: myAttendanceLoader)
             }
         }
     }

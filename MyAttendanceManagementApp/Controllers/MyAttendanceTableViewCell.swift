@@ -19,16 +19,17 @@ class MyAttendanceTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         cellView.layer.cornerRadius = cellView.bounds.height / 2
         if(viewLabel.text == "A"){
-            viewLabel.textColor = UIColor.systemRed
-            cellView.layer.borderColor = UIColor.red.cgColor
+            viewLabel.textColor = UIColor(hex: "#e91f1fff") //red
+            cellView.layer.borderColor = UIColor(hex: "#e91f1fff")?.cgColor
         }
         else if (viewLabel.text == "P"){
-            viewLabel.textColor = UIColor.systemGreen
-            cellView.layer.borderColor = UIColor.systemGreen.cgColor
+            viewLabel.textColor = UIColor(hex: "#25a534ff") //green
+            cellView.layer.borderColor = UIColor(hex: "#25a534ff")?.cgColor
+            
         }
         else if (viewLabel.text == "H"){
-            viewLabel.textColor = UIColor.systemPurple
-            cellView.layer.borderColor = UIColor.systemPurple.cgColor
+            viewLabel.textColor = UIColor(hex: "#8228eeff") //purple
+            cellView.layer.borderColor = UIColor(hex: "#8228eeff")?.cgColor
         }
         else if (viewLabel.text == "NA"){
             viewLabel.textColor = UIColor.darkGray

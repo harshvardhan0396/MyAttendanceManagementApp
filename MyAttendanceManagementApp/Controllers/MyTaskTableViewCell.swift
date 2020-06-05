@@ -17,28 +17,25 @@ class MyTaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var viewLabel: UILabel!
-    
-    @IBOutlet weak var mainHeading: UILabel!
-    
-    @IBOutlet weak var requestedOnLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     
     
     @IBOutlet weak var subjectLbl: UILabel!
-    @IBOutlet weak var requestedByLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     override func layoutSubviews() {
         cellView.layer.cornerRadius = cellView.bounds.height / 2
         if(viewLabel.text == "SL"){
-            viewLabel.textColor = UIColor(hex: "#ffe700ff")
-            cellView.layer.borderColor = UIColor(hex: "#ffe700ff")?.cgColor
+            viewLabel.textColor = UIColor(hex: "#e91f1fff") //red
+            cellView.layer.borderColor = UIColor(hex: "#e91f1fff")?.cgColor
         }
         else if (viewLabel.text == "PL"){
-            viewLabel.textColor = UIColor.systemGreen
+            viewLabel.textColor = UIColor(hex: "#25a534ff") //green
+            cellView.layer.borderColor = UIColor(hex: "#25a534ff")?.cgColor
             
         }
         else if (viewLabel.text == "CL"){
-            viewLabel.textColor = UIColor.systemPurple
+            viewLabel.textColor = UIColor(hex: "#8228eeff") //purple
+            cellView.layer.borderColor = UIColor(hex: "#8228eeff")?.cgColor
         }
     }
     override func awakeFromNib() {
