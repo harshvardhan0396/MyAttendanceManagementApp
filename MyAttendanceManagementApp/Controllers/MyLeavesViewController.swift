@@ -54,14 +54,15 @@ class MyLeavesViewController: UIViewController {
 extension MyLeavesViewController{
     
     func getLeavesData(endPoint: String){
-        //let myLeavesloader = self.alertIndicator()
+        let myLeavesloader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: [Leave].self){
             (leavesResponse) in
+            self.stopLoader(loader: myLeavesloader)
             for arr in leavesResponse{
                 self.leaveArray.append(arr)
                 DispatchQueue.main.async{
                     self.tableView?.reloadData()
-                    //self.stopLoader(loader: myLeavesloader)
+                    
                 }
             }
         }
@@ -72,7 +73,8 @@ extension MyLeavesViewController{
 
 extension MyLeavesViewController: UITableViewDelegate, UITableViewDataSource{
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return leaveArray.count
+        
+        return leaveArray.count
       }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +82,10 @@ extension MyLeavesViewController: UITableViewDelegate, UITableViewDataSource{
         cell?.viewLabel.text = leaveArray[indexPath.row].viewLabel
         cell?.cellDateLabel.text = leaveArray[indexPath.row].date
         cell?.cellReasonLabel.text = leaveArray[indexPath.row].subject
+        
+        let leaveType = leaveArray[indexPath.row].viewLabel
+        cell?.setColor(leaveType: leaveType)
+        
         cell?.selectionStyle = .none
         return cell!
     }

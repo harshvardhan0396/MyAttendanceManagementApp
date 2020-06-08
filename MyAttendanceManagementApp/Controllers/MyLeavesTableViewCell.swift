@@ -19,21 +19,24 @@ class MyLeavesTableViewCell: UITableViewCell {
     @IBOutlet weak var viewLabel: UILabel!
     override func layoutSubviews() {
         cellView.layer.cornerRadius = cellView.bounds.height / 2
-        if(viewLabel.text == "SL"){
+    }
+    
+    func setColor(leaveType: String){
+        if(leaveType == "SL"){
             viewLabel.textColor = UIColor(hex: "#e91f1fff") //red
             cellView.layer.borderColor = UIColor(hex: "#e91f1fff")?.cgColor
         }
-        else if (viewLabel.text == "PL"){
+        else if (leaveType == "PL"){
             viewLabel.textColor = UIColor(hex: "#25a534ff") //green
             cellView.layer.borderColor = UIColor(hex: "#25a534ff")?.cgColor
             
         }
-        else if (viewLabel.text == "CL"){
+        else if (leaveType == "CL"){
             viewLabel.textColor = UIColor(hex: "#8228eeff") //purple
             cellView.layer.borderColor = UIColor(hex: "#8228eeff")?.cgColor
         }
-        
     }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

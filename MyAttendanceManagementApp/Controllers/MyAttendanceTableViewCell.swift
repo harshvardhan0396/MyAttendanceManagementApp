@@ -18,6 +18,9 @@ class MyAttendanceTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         cellView.layer.cornerRadius = cellView.bounds.height / 2
+    }
+    
+    func setColor(attendanceType: String){
         if(viewLabel.text == "A"){
             viewLabel.textColor = UIColor(hex: "#e91f1fff") //red
             cellView.layer.borderColor = UIColor(hex: "#e91f1fff")?.cgColor

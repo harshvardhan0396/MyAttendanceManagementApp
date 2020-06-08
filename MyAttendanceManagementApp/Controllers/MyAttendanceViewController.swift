@@ -38,7 +38,7 @@ class MyAttendanceViewController: UIViewController {
     }
     
     func checkMonth(monthId: Int){
-        print(monthId)
+        //print(monthId)
         if(monthId == 4){
             attendanceData.removeAll()
             self.getAttendanceSummaryData(endPoint: "/attendanceSummaryApril/4")
@@ -67,9 +67,10 @@ class MyAttendanceViewController: UIViewController {
 
 extension MyAttendanceViewController{
     func getAttendanceSummaryData(endPoint: String){
-        //let myAttendanceLoader = self.alertIndicator()
+        let myAttendanceLoader = self.alertIndicator()
         getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: AttendanceSummary.self){
             (attendanceSummaryResponse) in
+            self.stopLoader(loader: myAttendanceLoader)
             DispatchQueue.main.async{
                 self.monthNameLbl?.text = attendanceSummaryResponse.monthName
                 self.totalLbl?.text = String(attendanceSummaryResponse.total)
@@ -83,7 +84,7 @@ extension MyAttendanceViewController{
                         self.tableView?.reloadData()
                     }
                 }
-                //self.stopLoader(loader: myAttendanceLoader)
+                
             }
         }
     }
@@ -99,6 +100,12 @@ extension MyAttendanceViewController: UITableViewDelegate, UITableViewDataSource
         cell?.viewLabel.text = attendanceData[indexPath.row].viewLabel
         cell?.dateLabel.text = attendanceData[indexPath.row].date
         cell?.timeLabel.text = attendanceData[indexPath.row].time
+        
+        let attendanceType = attendanceData[indexPath.row].viewLabel
+        //print(leaveArray[indexPath.row].viewLabel)
+        cell?.setColor(attendanceType: attendanceType)
+
+        
         
         //tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         
