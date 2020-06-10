@@ -21,23 +21,8 @@ class MyAttendanceTableViewCell: UITableViewCell {
     }
     
     func setColor(attendanceType: String){
-        if(viewLabel.text == "A"){
-            viewLabel.textColor = UIColor(hex: "#e91f1fff") //red
-            cellView.layer.borderColor = UIColor(hex: "#e91f1fff")?.cgColor
-        }
-        else if (viewLabel.text == "P"){
-            viewLabel.textColor = UIColor(hex: "#25a534ff") //green
-            cellView.layer.borderColor = UIColor(hex: "#25a534ff")?.cgColor
-            
-        }
-        else if (viewLabel.text == "H"){
-            viewLabel.textColor = UIColor(hex: "#8228eeff") //purple
-            cellView.layer.borderColor = UIColor(hex: "#8228eeff")?.cgColor
-        }
-        else if (viewLabel.text == "NA"){
-            viewLabel.textColor = UIColor.darkGray
-            cellView.layer.borderColor = UIColor.darkGray.cgColor
-        }
+        viewLabel.textColor = UIColor(hex: cellColor.setColor(leaveType: attendanceType)) //red
+        cellView.layer.borderColor = UIColor(hex: cellColor.setColor(leaveType: attendanceType))?.cgColor
     }
 
     override func awakeFromNib() {

@@ -9,11 +9,8 @@
 import UIKit
 
 var cellViewColor = CellViewColor()
-
 class MyTaskTableViewCell: UITableViewCell {
 
-    
-   // @IBOutlet weak var leaveImage: UIImageView!
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var viewLabel: UILabel!
@@ -35,19 +32,8 @@ class MyTaskTableViewCell: UITableViewCell {
     }
     
     func setColor(leaveType: String){
-        if(leaveType == "SL"){
-            viewLabel.textColor = UIColor(hex: "#e91f1fff") //red
-            cellView.layer.borderColor = UIColor(hex: "#e91f1fff")?.cgColor
-        }
-        else if (leaveType == "PL"){
-            viewLabel.textColor = UIColor(hex: "#25a534ff") //green
-            cellView.layer.borderColor = UIColor(hex: "#25a534ff")?.cgColor
-            
-        }
-        else if (leaveType == "CL"){
-            viewLabel.textColor = UIColor(hex: "#8228eeff") //purple
-            cellView.layer.borderColor = UIColor(hex: "#8228eeff")?.cgColor
-        }
+        viewLabel.textColor = UIColor(hex: cellColor.setColor(leaveType: leaveType)) //red
+        cellView.layer.borderColor = UIColor(hex: cellColor.setColor(leaveType: leaveType))?.cgColor
     }
 
 }

@@ -6,12 +6,11 @@
 //  Copyright © 2020 Harshvardhan Patidar. All rights reserved.
 //
 
+
 import UIKit
 
 class MyLeavesViewController: UIViewController {
     
-    var rootAPI = RootAPI()
-    var getData = GetDataFromAPI()
     
     var leaveArray = [Leave]()
     
@@ -26,16 +25,16 @@ class MyLeavesViewController: UIViewController {
                     
         if(sender.tag == 1){
             leaveArray.removeAll()
-            self.getLeavesData(endPoint: "/leaves/pl/approved/1")
+            self.getLeavesData(endPoint: rootAPI.approved)
             
         }
         else if(sender.tag == 2){
             leaveArray.removeAll()
-            self.getLeavesData(endPoint: "/leaves/pl/pending/1")
+            self.getLeavesData(endPoint: rootAPI.pending)
         }
         else if(sender.tag == 3){
             leaveArray.removeAll()
-            self.getLeavesData(endPoint: "/leaves/pl/rejected/1")
+            self.getLeavesData(endPoint: rootAPI.rejected)
         }
         
         
@@ -43,27 +42,23 @@ class MyLeavesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //controlButton.layer.cornerradius = 8
-        //controlButton.setTitleColor(UIColor.grayColor, for: UIControl.State.normal)
-        
 
-        self.getLeavesData(endPoint: "/leaves/pl/approved/1")
+        self.getLeavesData(endPoint: rootAPI.approved)
     }
 }
 
 extension MyLeavesViewController{
     
     func getLeavesData(endPoint: String){
-        let myLeavesloader = self.alertIndicator()
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: [Leave].self){
+        let myLeavesloader = self.startLoader()
+        getData.employeeData(requestUrl: URL(string: endPoint)!, resultType: [Leave].self){
             (leavesResponse) in
             self.stopLoader(loader: myLeavesloader)
             for arr in leavesResponse{
                 self.leaveArray.append(arr)
-                DispatchQueue.main.async{
-                    self.tableView?.reloadData()
-                    
-                }
+            }
+            DispatchQueue.main.async{
+                self.tableView?.reloadData()
             }
         }
     }
@@ -78,16 +73,16 @@ extension MyLeavesViewController: UITableViewDelegate, UITableViewDataSource{
       }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyLeavesTableViewCell
-        cell?.viewLabel.text = leaveArray[indexPath.row].viewLabel
-        cell?.cellDateLabel.text = leaveArray[indexPath.row].date
-        cell?.cellReasonLabel.text = leaveArray[indexPath.row].subject
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyLeavesTableViewCell
+        cell.viewLabel.text = leaveArray[indexPath.row].viewLabel
+        cell.cellDateLabel.text = leaveArray[indexPath.row].date
+        cell.cellReasonLabel.text = leaveArray[indexPath.row].subject
         
         let leaveType = leaveArray[indexPath.row].viewLabel
-        cell?.setColor(leaveType: leaveType)
+        cell.setColor(leaveType: leaveType)
         
-        cell?.selectionStyle = .none
-        return cell!
+        cell.selectionStyle = .none
+        return cell
     }
     
      

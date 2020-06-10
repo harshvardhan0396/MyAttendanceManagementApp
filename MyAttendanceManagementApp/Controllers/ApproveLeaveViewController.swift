@@ -9,9 +9,7 @@
 import UIKit
 
 class ApproveLeaveViewController: UIViewController {
-
-    var rootAPI = RootAPI()
-    var getData = GetDataFromAPI()
+    
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var fromDateTextField: UITextField!
@@ -20,8 +18,6 @@ class ApproveLeaveViewController: UIViewController {
     @IBOutlet weak var totalDaysTextField: UITextField!
     @IBOutlet weak var reasonTextField: UITextView!
     @IBOutlet weak var rejectionTextField: UITextView!
-    
-    
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var applyButton: UIButton!
@@ -32,15 +28,6 @@ class ApproveLeaveViewController: UIViewController {
         
         applyButton.cornerRadius()
         cancelButton.cornerRadius()
-        
-//        self.nameTextField.addBottomBorder()
-//        self.fromDateTextField.addBottomBorder()
-//        self.leaveTypeTextField.addBottomBorder()
-//        self.totalDaysTextField.addBottomBorder()
-//        self.toDateTextField.addBottomBorder()
-//        self.totalDaysTextField.addBottomBorder()
-//        self.rejectionTextField.addBottomBorder()
-//        self.reasonTextField.addBottomBorder()
         
         self.getApproveLeaveData()
      }
@@ -69,8 +56,8 @@ extension UITextView{
 
 extension ApproveLeaveViewController{
     func getApproveLeaveData(){
-        let loader = self.alertIndicator()
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/approveLeave/1")!, resultType: ApproveLeave.self){
+        let loader = self.startLoader()
+        getData.employeeData(requestUrl: URL(string: rootAPI.approveLeave)!, resultType: ApproveLeave.self){
             (approveLeaveResponse) in
                 DispatchQueue.main.async{
                     self.nameTextField.text = approveLeaveResponse.appliedBy

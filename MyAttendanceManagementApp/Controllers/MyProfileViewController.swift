@@ -9,8 +9,8 @@
 import UIKit
 class MyProfileViewController: UIViewController {
     
-    var rootAPI = RootAPI()
-    var getData = GetDataFromAPI()
+    //var rootAPI = RootAPI()
+    //var getData = GetDataFromAPI()
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -34,8 +34,8 @@ class MyProfileViewController: UIViewController {
 extension MyProfileViewController{
 
     func employeeProfileData(){
-        let employeeLoader = self.alertIndicator()
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/employee")!, resultType: EmployeeData.self){(employeeProfileResponse) in
+        let employeeLoader = self.startLoader()
+        getData.employeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeProfileResponse) in
             self.stopLoader(loader: employeeLoader)
             DispatchQueue.main.async{
                 self.image.image = UIImage(named: employeeProfileResponse.image)!

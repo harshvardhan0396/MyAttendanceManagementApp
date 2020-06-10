@@ -13,7 +13,6 @@ import CLTypingLabel
 class WelcomeViewController: UIViewController {
 
     
-    //@IBOutlet weak var welcomeLbl: CLTypingLabel!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -32,16 +31,11 @@ class WelcomeViewController: UIViewController {
             print("Internet is Connected")
         }
         else{
-            alertMessage()
+            alterBox(title: "Warning", message: "Make sure your network is connected")
         }
     }
     
-    func alertMessage(){
-        let alert = UIAlertController(title: "WARNING", message: "Make sure your network is connected", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+        
 }
 
 extension UIButton{

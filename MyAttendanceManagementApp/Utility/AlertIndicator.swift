@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController{
-    func alertIndicator() -> UIAlertController{
+    func startLoader() -> UIAlertController{
         let alert = UIAlertController(title: nil, message: "Please Wait", preferredStyle: .alert)
         
         let indicator = UIActivityIndicatorView(frame: CGRect(x: 10, y:5, width: 50, height: 50))

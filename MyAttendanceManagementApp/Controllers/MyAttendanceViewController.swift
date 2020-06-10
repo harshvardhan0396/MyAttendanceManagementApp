@@ -11,10 +11,7 @@ import UIKit
 class MyAttendanceViewController: UIViewController {
     
     var attendanceData = [AttendanceData]()
-    
-    var rootAPI = RootAPI()
-    var getData = GetDataFromAPI()
-    
+        
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var monthNameLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
@@ -41,25 +38,24 @@ class MyAttendanceViewController: UIViewController {
         //print(monthId)
         if(monthId == 4){
             attendanceData.removeAll()
-            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryApril/4")
+            self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryApril)
         }
         else if(monthId == 5){
             attendanceData.removeAll()
-            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryMay/5")
+            self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryMay)
         }
         else if(monthId == 6){
             attendanceData.removeAll()
-            self.getAttendanceSummaryData(endPoint: "/attendanceSummaryJune/6")
+            self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryJune)
         }
         else{
             print("no data available...")
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getAttendanceSummaryData(endPoint: "/attendanceSummaryMay/5")
+        self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryMay)
     }
     
 
@@ -67,8 +63,8 @@ class MyAttendanceViewController: UIViewController {
 
 extension MyAttendanceViewController{
     func getAttendanceSummaryData(endPoint: String){
-        let myAttendanceLoader = self.alertIndicator()
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + endPoint)!, resultType: AttendanceSummary.self){
+        let myAttendanceLoader = self.startLoader()
+        getData.employeeData(requestUrl: URL(string: endPoint)!, resultType: AttendanceSummary.self){
             (attendanceSummaryResponse) in
             self.stopLoader(loader: myAttendanceLoader)
             DispatchQueue.main.async{
@@ -80,11 +76,10 @@ extension MyAttendanceViewController{
                 
                 for arr in attendanceSummaryResponse.data{
                     self.attendanceData.append(arr)
-                    DispatchQueue.main.async{
-                        self.tableView?.reloadData()
-                    }
                 }
-                
+                DispatchQueue.main.async{
+                    self.tableView?.reloadData()
+                }
             }
         }
     }
@@ -96,21 +91,15 @@ extension MyAttendanceViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyAttendanceTableViewCell
-        cell?.viewLabel.text = attendanceData[indexPath.row].viewLabel
-        cell?.dateLabel.text = attendanceData[indexPath.row].date
-        cell?.timeLabel.text = attendanceData[indexPath.row].time
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyAttendanceTableViewCell
+        cell.viewLabel.text = attendanceData[indexPath.row].viewLabel
+        cell.dateLabel.text = attendanceData[indexPath.row].date
+        cell.timeLabel.text = attendanceData[indexPath.row].time
         
         let attendanceType = attendanceData[indexPath.row].viewLabel
-        //print(leaveArray[indexPath.row].viewLabel)
-        cell?.setColor(attendanceType: attendanceType)
-
-        
-        
-        //tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
-        
-        cell?.selectionStyle = .none
-        return cell!
+        cell.setColor(attendanceType: attendanceType)
+        cell.selectionStyle = .none
+        return cell
     }
     
  

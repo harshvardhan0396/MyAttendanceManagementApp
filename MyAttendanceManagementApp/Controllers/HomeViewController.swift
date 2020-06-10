@@ -10,8 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
-    var rootAPI = RootAPI()
-    var getData = GetDataFromAPI()
+   
     var displayDateAndGreetings = DateAndGreetings()
     
     
@@ -38,7 +37,6 @@ class HomeViewController: UIViewController{
         dateAndWeekDayLbl.text = displayDateAndGreetings.getDateAndWeekDay()
         greetLbl.text = displayDateAndGreetings.greetUser()
         navigationItem.hidesBackButton = true
-        //self.presentDataToHomePage()
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
@@ -46,32 +44,24 @@ class HomeViewController: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //let loader = self.alertIndicator()
         if(CheckInternet.Connection()){
             print("Internet is Connected")
             self.presentDataToHomePage()
         }
         else{
-            alertMessage()
+            alterBox(title: "Warning", message: "Make sure your network is connected")
+
         }
-    }
-    
-    func alertMessage(){
-        let alert = UIAlertController(title: "WARNING", message: "Make sure your network is connected", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    
+    }    
 }
 
 extension HomeViewController{
     
     func presentDataToHomePage(){
         
-        let loader = self.alertIndicator()
+        let loader = self.startLoader()
         //getting employee data
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/employee")!, resultType: EmployeeData.self){(employeeResponse) in
+        getData.employeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeResponse) in
             DispatchQueue.main.async{
                 self.employeeNameLbl.text = employeeResponse.employeeName
                 self.stopLoader(loader: loader)
@@ -79,7 +69,7 @@ extension HomeViewController{
         }
 
         //getting leave data
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/leaves")!, resultType: LeavesCount.self){(leavesResponse) in
+        getData.employeeData(requestUrl: URL(string: rootAPI.leaves)!, resultType: LeavesCount.self){(leavesResponse) in
             DispatchQueue.main.async{
                 self.clLbl.text = String(leavesResponse.cl)
                 self.slLbl.text = String(leavesResponse.sl)
@@ -89,7 +79,7 @@ extension HomeViewController{
         
         
         //getting attendance data
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/attendance/4")!, resultType: Attendnace.self){(attendanceResponse) in
+        getData.employeeData(requestUrl: URL(string: rootAPI.attendance)!, resultType: Attendnace.self){(attendanceResponse) in
                 DispatchQueue.main.async{
                     self.totalPresentButton.setTitle("\(attendanceResponse.present)", for: .normal)
                     self.totalAbsentButton.setTitle("\(attendanceResponse.absent)", for: .normal)
@@ -98,7 +88,7 @@ extension HomeViewController{
         
         
         //getting holiday data
-        getData.employeeData(requestUrl: URL(string: rootAPI.baseURL + "/holiday/4")!, resultType: Holiday.self){(holidayResponse) in
+        getData.employeeData(requestUrl: URL(string: rootAPI.holiday)!, resultType: Holiday.self){(holidayResponse) in
                 DispatchQueue.main.async{
                     self.holidayDateLbl.text =  String(holidayResponse.date)
                     self.holidayNameLbl.text =  holidayResponse.holidayName
