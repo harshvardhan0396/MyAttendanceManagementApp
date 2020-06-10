@@ -8,9 +8,9 @@
 
 import Foundation
 
-class GetDataFromAPI{
+class GetData{
 
-    func employeeData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler: @escaping(_ result: T) -> Void){
+    func getEmployeeData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler: @escaping(_ result: T) -> Void){
         URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
 
             if(error == nil && data != nil && data?.count != 0){

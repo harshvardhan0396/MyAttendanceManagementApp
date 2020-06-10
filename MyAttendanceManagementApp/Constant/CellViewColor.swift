@@ -12,7 +12,8 @@ import UIKit
 
 class CellViewColor{
     var color: String = ""
-    func setColor(leaveType: String) -> String{
+    
+    func setCellColor(leaveType: String) -> String{
         
         if(leaveType == "SL" || leaveType == "A"){
             self.color = "#e91f1fff"//?.cgColor //red

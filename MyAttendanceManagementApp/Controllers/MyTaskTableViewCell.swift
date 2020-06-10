@@ -32,8 +32,8 @@ class MyTaskTableViewCell: UITableViewCell {
     }
     
     func setColor(leaveType: String){
-        viewLabel.textColor = UIColor(hex: cellColor.setColor(leaveType: leaveType)) //red
-        cellView.layer.borderColor = UIColor(hex: cellColor.setColor(leaveType: leaveType))?.cgColor
+        viewLabel.textColor = UIColor(hex: cellColor.setCellColor(leaveType: leaveType)) //red
+        cellView.layer.borderColor = UIColor(hex: cellColor.setCellColor(leaveType: leaveType))?.cgColor
     }
 
 }

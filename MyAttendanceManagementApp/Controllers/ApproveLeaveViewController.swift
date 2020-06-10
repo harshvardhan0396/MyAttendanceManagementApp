@@ -57,7 +57,7 @@ extension UITextView{
 extension ApproveLeaveViewController{
     func getApproveLeaveData(){
         let loader = self.startLoader()
-        getData.employeeData(requestUrl: URL(string: rootAPI.approveLeave)!, resultType: ApproveLeave.self){
+        employee.getEmployeeData(requestUrl: URL(string: rootAPI.approveLeave)!, resultType: ApproveLeave.self){
             (approveLeaveResponse) in
                 DispatchQueue.main.async{
                     self.nameTextField.text = approveLeaveResponse.appliedBy

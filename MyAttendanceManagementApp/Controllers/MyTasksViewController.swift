@@ -27,7 +27,7 @@ class MyTasksViewController: UIViewController {
 extension MyTasksViewController{
     func getTasksData(){
         let myTaskLoader = self.startLoader()
-        getData.employeeData(requestUrl: URL(string: rootAPI.tasks)!, resultType: [Tasks].self){
+        employee.getEmployeeData(requestUrl: URL(string: rootAPI.tasks)!, resultType: [Tasks].self){
             (tasksResponse) in
             self.stopLoader(loader: myTaskLoader)
             for arr in tasksResponse{

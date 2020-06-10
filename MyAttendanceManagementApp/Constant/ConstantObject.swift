@@ -8,7 +8,7 @@
 
 import Foundation
 
-var getData = GetDataFromAPI()
+var employee = GetData()
 var rootAPI = RootAPI()
 
 var cellColor = CellViewColor()

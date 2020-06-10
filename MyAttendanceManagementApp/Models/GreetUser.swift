@@ -16,13 +16,13 @@ struct DateAndGreetings{
         //formatter.timeStyle = .medium
         formatter.dateStyle = .long
         let weekDay = Calendar.current.component(.weekday, from: Date()) - 1
-        let weekDayInString = getWeekDayInString(weekDay: weekDay)
+        let weekDayInString = getWeekDay(weekDay: weekDay)
         let dateTimeString = formatter.string(from: cufrentDateTime)
         let dayAndDateString = weekDayInString + ", " + dateTimeString
         return dayAndDateString
     }
     
-    func getWeekDayInString(weekDay: Int) -> String{
+    func getWeekDay(weekDay: Int) -> String{
         var weekDayInString = ""
         if (weekDay == 1){
             weekDayInString = "Monday"
@@ -49,7 +49,7 @@ struct DateAndGreetings{
         return weekDayInString
     }
     
-    func greetUser() -> String{
+    func sendGreetings() -> String{
         let hour = NSCalendar.current.component(.hour, from: NSDate() as Date)
         var currentTimeOfDay: String
         if hour >= 0 && hour < 12 {

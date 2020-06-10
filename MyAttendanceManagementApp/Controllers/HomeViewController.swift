@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
-   
+    
     var displayDateAndGreetings = DateAndGreetings()
     
     
@@ -31,16 +31,17 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var holidayDateLbl: UILabel!
     @IBOutlet weak var holidayNameLbl: UILabel!
     @IBOutlet weak var holidayWeekDayLbl: UILabel!
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        dateAndWeekDayLbl.text = displayDateAndGreetings.getDateAndWeekDay()
-        greetLbl.text = displayDateAndGreetings.greetUser()
-        navigationItem.hidesBackButton = true
-    }
+    
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dateAndWeekDayLbl.text = displayDateAndGreetings.getDateAndWeekDay()
+        greetLbl.text = displayDateAndGreetings.sendGreetings()
+        navigationItem.hidesBackButton = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +51,7 @@ class HomeViewController: UIViewController{
         }
         else{
             alterBox(title: "Warning", message: "Make sure your network is connected")
-
+            
         }
     }    
 }
@@ -61,15 +62,15 @@ extension HomeViewController{
         
         let loader = self.startLoader()
         //getting employee data
-        getData.employeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeResponse) in
+        employee.getEmployeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeResponse) in
             DispatchQueue.main.async{
                 self.employeeNameLbl.text = employeeResponse.employeeName
                 self.stopLoader(loader: loader)
             }
         }
-
+        
         //getting leave data
-        getData.employeeData(requestUrl: URL(string: rootAPI.leaves)!, resultType: LeavesCount.self){(leavesResponse) in
+        employee.getEmployeeData(requestUrl: URL(string: rootAPI.leaves)!, resultType: LeavesCount.self){(leavesResponse) in
             DispatchQueue.main.async{
                 self.clLbl.text = String(leavesResponse.cl)
                 self.slLbl.text = String(leavesResponse.sl)
@@ -79,25 +80,25 @@ extension HomeViewController{
         
         
         //getting attendance data
-        getData.employeeData(requestUrl: URL(string: rootAPI.attendance)!, resultType: Attendnace.self){(attendanceResponse) in
-                DispatchQueue.main.async{
-                    self.totalPresentButton.setTitle("\(attendanceResponse.present)", for: .normal)
-                    self.totalAbsentButton.setTitle("\(attendanceResponse.absent)", for: .normal)
-                }
+        employee.getEmployeeData(requestUrl: URL(string: rootAPI.attendance)!, resultType: Attendnace.self){(attendanceResponse) in
+            DispatchQueue.main.async{
+                self.totalPresentButton.setTitle("\(attendanceResponse.present)", for: .normal)
+                self.totalAbsentButton.setTitle("\(attendanceResponse.absent)", for: .normal)
+            }
         }
         
         
         //getting holiday data
-        getData.employeeData(requestUrl: URL(string: rootAPI.holiday)!, resultType: Holiday.self){(holidayResponse) in
-                DispatchQueue.main.async{
-                    self.holidayDateLbl.text =  String(holidayResponse.date)
-                    self.holidayNameLbl.text =  holidayResponse.holidayName
-                    self.holidayWeekDayLbl.text =  holidayResponse.day
-                }
+        employee.getEmployeeData(requestUrl: URL(string: rootAPI.holiday)!, resultType: Holiday.self){(holidayResponse) in
+            DispatchQueue.main.async{
+                self.holidayDateLbl.text =  String(holidayResponse.date)
+                self.holidayNameLbl.text =  holidayResponse.holidayName
+                self.holidayWeekDayLbl.text =  holidayResponse.day
+            }
         }
-
+        
     }
-
+    
 }
 
 

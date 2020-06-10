@@ -35,7 +35,7 @@ extension MyProfileViewController{
 
     func employeeProfileData(){
         let employeeLoader = self.startLoader()
-        getData.employeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeProfileResponse) in
+        employee.getEmployeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeProfileResponse) in
             self.stopLoader(loader: employeeLoader)
             DispatchQueue.main.async{
                 self.image.image = UIImage(named: employeeProfileResponse.image)!

@@ -51,7 +51,7 @@ extension MyLeavesViewController{
     
     func getLeavesData(endPoint: String){
         let myLeavesloader = self.startLoader()
-        getData.employeeData(requestUrl: URL(string: endPoint)!, resultType: [Leave].self){
+        employee.getEmployeeData(requestUrl: URL(string: endPoint)!, resultType: [Leave].self){
             (leavesResponse) in
             self.stopLoader(loader: myLeavesloader)
             for arr in leavesResponse{
