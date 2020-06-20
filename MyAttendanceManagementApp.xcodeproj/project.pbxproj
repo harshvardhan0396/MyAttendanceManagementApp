@@ -19,6 +19,7 @@
 		3A76627B244D816D00862004 /* MyLeavesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76627A244D816D00862004 /* MyLeavesTableViewCell.swift */; };
 		3A76627D244DDFBE00862004 /* MyAttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76627C244DDFBD00862004 /* MyAttendanceTableViewCell.swift */; };
 		3A76627F244DE01400862004 /* MyAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76627E244DE01400862004 /* MyAttendanceViewController.swift */; };
+		3A76A7BF249B2C4D004A89FF /* AlertBoxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76A7BE249B2C4C004A89FF /* AlertBoxMessage.swift */; };
 		3A7C9962247FDFD900635DBA /* CellViewColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C9961247FDFD900635DBA /* CellViewColor.swift */; };
 		3A87022F2480F64C00EE11A5 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87022E2480F64C00EE11A5 /* MockAPI.swift */; };
 		3A8726052446E91E00B26E56 /* MyTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8726042446E91E00B26E56 /* MyTasksViewController.swift */; };
@@ -27,7 +28,6 @@
 		3A87260B244731D400B26E56 /* ApplyForLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */; };
 		3A9A7B46245142650068FD95 /* UIViewRoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A7B45245142640068FD95 /* UIViewRoundCorner.swift */; };
 		3AA359B52490B01B00C3CAE2 /* AlertBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA359B42490B01B00C3CAE2 /* AlertBox.swift */; };
-		3AA359B72490B52600C3CAE2 /* ConstantObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA359B62490B52600C3CAE2 /* ConstantObject.swift */; };
 		3AAB055024447AFC00DD3116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB054F24447AFC00DD3116 /* AppDelegate.swift */; };
 		3AAB055224447AFC00DD3116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB055124447AFC00DD3116 /* SceneDelegate.swift */; };
 		3AAB055424447AFC00DD3116 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB055324447AFC00DD3116 /* HomeViewController.swift */; };
@@ -54,6 +54,7 @@
 		3A76627A244D816D00862004 /* MyLeavesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeavesTableViewCell.swift; sourceTree = "<group>"; };
 		3A76627C244DDFBD00862004 /* MyAttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		3A76627E244DE01400862004 /* MyAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAttendanceViewController.swift; sourceTree = "<group>"; };
+		3A76A7BE249B2C4C004A89FF /* AlertBoxMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBoxMessage.swift; sourceTree = "<group>"; };
 		3A7C9961247FDFD900635DBA /* CellViewColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewColor.swift; sourceTree = "<group>"; };
 		3A87022E2480F64C00EE11A5 /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
 		3A8726042446E91E00B26E56 /* MyTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTasksViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		3A87260A244731D400B26E56 /* ApplyForLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyForLeaveViewController.swift; sourceTree = "<group>"; };
 		3A9A7B45245142640068FD95 /* UIViewRoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundCorner.swift; sourceTree = "<group>"; };
 		3AA359B42490B01B00C3CAE2 /* AlertBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBox.swift; sourceTree = "<group>"; };
-		3AA359B62490B52600C3CAE2 /* ConstantObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantObject.swift; sourceTree = "<group>"; };
 		3AAB054C24447AFC00DD3116 /* MyAttendanceManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAttendanceManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAB054F24447AFC00DD3116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AAB055124447AFC00DD3116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			children = (
 				3A7C9961247FDFD900635DBA /* CellViewColor.swift */,
 				3AB9858724617A5100ADAFAE /* RootAPI.swift */,
-				3AA359B62490B52600C3CAE2 /* ConstantObject.swift */,
+				3A76A7BE249B2C4C004A89FF /* AlertBoxMessage.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -336,7 +336,6 @@
 				3A5F88B92488C26D003677D6 /* ButtonAnimation.swift in Sources */,
 				3A87022F2480F64C00EE11A5 /* MockAPI.swift in Sources */,
 				3A766279244D810400862004 /* MyLeavesViewController.swift in Sources */,
-				3AA359B72490B52600C3CAE2 /* ConstantObject.swift in Sources */,
 				3A76627F244DE01400862004 /* MyAttendanceViewController.swift in Sources */,
 				3A347B5C248647CC0091C9A3 /* UIColor.swift in Sources */,
 				3AB9858A2461A41700ADAFAE /* GreetUser.swift in Sources */,
@@ -344,6 +343,7 @@
 				3A9A7B46245142650068FD95 /* UIViewRoundCorner.swift in Sources */,
 				3A679C89245018A000C3AFE4 /* ButtonBorder.swift in Sources */,
 				3A32B9C52485346E0024695E /* AlertIndicator.swift in Sources */,
+				3A76A7BF249B2C4D004A89FF /* AlertBoxMessage.swift in Sources */,
 				3A32B9C3248522350024695E /* CheckInternet.swift in Sources */,
 				3A76627B244D816D00862004 /* MyLeavesTableViewCell.swift in Sources */,
 				3AB9858824617A5200ADAFAE /* RootAPI.swift in Sources */,

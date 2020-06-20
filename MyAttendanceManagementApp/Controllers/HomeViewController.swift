@@ -62,7 +62,7 @@ extension HomeViewController{
         
         let loader = self.startLoader()
         //getting employee data
-        employee.getEmployeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeResponse) in
+        GetData.getEmployeeData(requestUrl: URL(string: RootAPI.employeeData)!, resultType: EmployeeData.self){(employeeResponse) in
             DispatchQueue.main.async{
                 self.employeeNameLbl.text = employeeResponse.employeeName
                 self.stopLoader(loader: loader)
@@ -70,7 +70,7 @@ extension HomeViewController{
         }
         
         //getting leave data
-        employee.getEmployeeData(requestUrl: URL(string: rootAPI.leaves)!, resultType: LeavesCount.self){(leavesResponse) in
+        GetData.getEmployeeData(requestUrl: URL(string: RootAPI.leaves)!, resultType: LeavesCount.self){(leavesResponse) in
             DispatchQueue.main.async{
                 self.clLbl.text = String(leavesResponse.cl)
                 self.slLbl.text = String(leavesResponse.sl)
@@ -80,7 +80,7 @@ extension HomeViewController{
         
         
         //getting attendance data
-        employee.getEmployeeData(requestUrl: URL(string: rootAPI.attendance)!, resultType: Attendnace.self){(attendanceResponse) in
+        GetData.getEmployeeData(requestUrl: URL(string: RootAPI.attendance)!, resultType: Attendnace.self){(attendanceResponse) in
             DispatchQueue.main.async{
                 self.totalPresentButton.setTitle("\(attendanceResponse.present)", for: .normal)
                 self.totalAbsentButton.setTitle("\(attendanceResponse.absent)", for: .normal)
@@ -89,7 +89,7 @@ extension HomeViewController{
         
         
         //getting holiday data
-        employee.getEmployeeData(requestUrl: URL(string: rootAPI.holiday)!, resultType: Holiday.self){(holidayResponse) in
+        GetData.getEmployeeData(requestUrl: URL(string: RootAPI.holiday)!, resultType: Holiday.self){(holidayResponse) in
             DispatchQueue.main.async{
                 self.holidayDateLbl.text =  String(holidayResponse.date)
                 self.holidayNameLbl.text =  holidayResponse.holidayName

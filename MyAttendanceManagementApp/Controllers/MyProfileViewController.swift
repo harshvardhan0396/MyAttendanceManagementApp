@@ -9,8 +9,6 @@
 import UIKit
 class MyProfileViewController: UIViewController {
     
-    //var rootAPI = RootAPI()
-    //var getData = GetDataFromAPI()
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -27,16 +25,14 @@ class MyProfileViewController: UIViewController {
         image.layer.cornerRadius = image.frame.size.width/2
         self.employeeProfileData()
     }
-    
-
 }
 
 extension MyProfileViewController{
 
     func employeeProfileData(){
-        let employeeLoader = self.startLoader()
-        employee.getEmployeeData(requestUrl: URL(string: rootAPI.employeeData)!, resultType: EmployeeData.self){(employeeProfileResponse) in
-            self.stopLoader(loader: employeeLoader)
+        //let employeeLoader = self.startLoader()
+        GetData.getEmployeeData(requestUrl: URL(string: RootAPI.employeeData)!, resultType: EmployeeData.self){(employeeProfileResponse) in
+            //self.stopLoader(loader: employeeLoader)
             DispatchQueue.main.async{
                 self.image.image = UIImage(named: employeeProfileResponse.image)!
                 self.name.text = employeeProfileResponse.employeeName

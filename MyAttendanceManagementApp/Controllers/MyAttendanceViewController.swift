@@ -38,15 +38,15 @@ class MyAttendanceViewController: UIViewController {
         //print(monthId)
         if(monthId == 4){
             attendanceData.removeAll()
-            self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryApril)
+            self.getAttendanceSummaryData(endPoint: RootAPI.attendanceSummaryApril)
         }
         else if(monthId == 5){
             attendanceData.removeAll()
-            self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryMay)
+            self.getAttendanceSummaryData(endPoint: RootAPI.attendanceSummaryMay)
         }
         else if(monthId == 6){
             attendanceData.removeAll()
-            self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryJune)
+            self.getAttendanceSummaryData(endPoint: RootAPI.attendanceSummaryJune)
         }
         else{
             print("no data available...")
@@ -55,7 +55,7 @@ class MyAttendanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getAttendanceSummaryData(endPoint: rootAPI.attendanceSummaryMay)
+        self.getAttendanceSummaryData(endPoint: RootAPI.attendanceSummaryMay)
     }
     
 
@@ -64,7 +64,7 @@ class MyAttendanceViewController: UIViewController {
 extension MyAttendanceViewController{
     func getAttendanceSummaryData(endPoint: String){
         let myAttendanceLoader = self.startLoader()
-        employee.getEmployeeData(requestUrl: URL(string: endPoint)!, resultType: AttendanceSummary.self){
+        GetData.getEmployeeData(requestUrl: URL(string: endPoint)!, resultType: AttendanceSummary.self){
             (attendanceSummaryResponse) in
             self.stopLoader(loader: myAttendanceLoader)
             DispatchQueue.main.async{

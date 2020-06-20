@@ -25,16 +25,16 @@ class MyLeavesViewController: UIViewController {
                     
         if(sender.tag == 1){
             leaveArray.removeAll()
-            self.getLeavesData(endPoint: rootAPI.approved)
+            self.getLeavesData(endPoint: RootAPI.approved)
             
         }
         else if(sender.tag == 2){
             leaveArray.removeAll()
-            self.getLeavesData(endPoint: rootAPI.pending)
+            self.getLeavesData(endPoint: RootAPI.pending)
         }
         else if(sender.tag == 3){
             leaveArray.removeAll()
-            self.getLeavesData(endPoint: rootAPI.rejected)
+            self.getLeavesData(endPoint: RootAPI.rejected)
         }
         
         
@@ -43,7 +43,7 @@ class MyLeavesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.getLeavesData(endPoint: rootAPI.approved)
+        self.getLeavesData(endPoint: RootAPI.approved)
     }
 }
 
@@ -51,7 +51,7 @@ extension MyLeavesViewController{
     
     func getLeavesData(endPoint: String){
         let myLeavesloader = self.startLoader()
-        employee.getEmployeeData(requestUrl: URL(string: endPoint)!, resultType: [Leave].self){
+        GetData.getEmployeeData(requestUrl: URL(string: endPoint)!, resultType: [Leave].self){
             (leavesResponse) in
             self.stopLoader(loader: myLeavesloader)
             for arr in leavesResponse{

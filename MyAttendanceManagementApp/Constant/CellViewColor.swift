@@ -11,18 +11,16 @@ import UIKit
 
 
 class CellViewColor{
-    var color: String = ""
     
-    func setCellColor(leaveType: String) -> String{
+    static var color: String = ""
+
+    static func staticColor(leaveType: String) -> String{
         
         if(leaveType == "SL" || leaveType == "A"){
-            self.color = "#e91f1fff"//?.cgColor //red
-            
+            self.color = "#e91f1fff" //red
         }
         else if (leaveType == "PL" || leaveType == "P"){
             self.color = "#25a534ff" //green
-            
-            
         }
         else if (leaveType == "CL" || leaveType == "H"){
             self.color = "#8228eeff" //purple
@@ -30,7 +28,6 @@ class CellViewColor{
         else if (leaveType == "NA"){
             self.color = "#b4b4b4FF" //gray
         }
-        
         return color
     }
 }

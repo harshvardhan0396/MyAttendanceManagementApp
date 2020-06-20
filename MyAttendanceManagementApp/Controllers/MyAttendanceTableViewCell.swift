@@ -21,8 +21,8 @@ class MyAttendanceTableViewCell: UITableViewCell {
     }
     
     func setColor(attendanceType: String){
-        viewLabel.textColor = UIColor(hex: cellColor.setCellColor(leaveType: attendanceType)) //red
-        cellView.layer.borderColor = UIColor(hex: cellColor.setCellColor(leaveType: attendanceType))?.cgColor
+        viewLabel.textColor = UIColor(hex: CellViewColor.staticColor(leaveType: attendanceType)) //red
+        cellView.layer.borderColor = UIColor(hex: CellViewColor.staticColor(leaveType: attendanceType))?.cgColor
     }
 
     override func awakeFromNib() {

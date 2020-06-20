@@ -10,7 +10,7 @@ import Foundation
 
 class GetData{
 
-    func getEmployeeData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler: @escaping(_ result: T) -> Void){
+    static func getEmployeeData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler: @escaping(_ result: T) -> Void){
         URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
 
             if(error == nil && data != nil && data?.count != 0){

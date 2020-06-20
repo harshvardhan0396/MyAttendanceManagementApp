@@ -11,7 +11,6 @@ import SwiftGifOrigin
 import CLTypingLabel
 
 class WelcomeViewController: UIViewController {
-
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -31,7 +30,7 @@ class WelcomeViewController: UIViewController {
             print("Internet is Connected")
         }
         else{
-            alterBox(title: "Warning", message: "Make sure your network is connected")
+            alterBox(title: AlertBoxMessage.noNetworkitle, message: AlertBoxMessage.noNetworkessage)
         }
     }
     

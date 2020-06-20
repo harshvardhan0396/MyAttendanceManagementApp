@@ -24,6 +24,13 @@ class ApplyForLeaveViewController: UIViewController {
     @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    
+    @IBAction func applyForLeaveButotn(_ sender: UIButton) {
+        alterBox(title: AlertBoxMessage.applyLeaveTitle, message: AlertBoxMessage.applyLeaveMessage)
+    }
+    
+    
+    
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
