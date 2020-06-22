@@ -56,7 +56,7 @@ extension UITextView{
 
 extension ApproveLeaveViewController{
     func getApproveLeaveData(){
-        let loader = self.startLoader()
+        //let loader = self.startLoader()
         GetData.getEmployeeData(requestUrl: URL(string: RootAPI.approveLeave)!, resultType: ApproveLeave.self){
             (approveLeaveResponse) in
                 DispatchQueue.main.async{
@@ -66,7 +66,7 @@ extension ApproveLeaveViewController{
                     self.leaveTypeTextField.text = approveLeaveResponse.leaveType
                     self.totalDaysTextField.text = String(approveLeaveResponse.totalDays)
                     self.reasonTextField.text = approveLeaveResponse.reason
-                    self.stopLoader(loader: loader)
+                    //self.stopLoader(loader: loader)
                 }
             }
     }

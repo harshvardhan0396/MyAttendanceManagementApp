@@ -50,10 +50,10 @@ class MyLeavesViewController: UIViewController {
 extension MyLeavesViewController{
     
     func getLeavesData(endPoint: String){
-        let myLeavesloader = self.startLoader()
+        //let myLeavesloader = self.startLoader()
         GetData.getEmployeeData(requestUrl: URL(string: endPoint)!, resultType: [Leave].self){
             (leavesResponse) in
-            self.stopLoader(loader: myLeavesloader)
+            //self.stopLoader(loader: myLeavesloader)
             for arr in leavesResponse{
                 self.leaveArray.append(arr)
             }

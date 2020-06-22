@@ -9,7 +9,7 @@
 import UIKit
 
 struct DateAndGreetings{
-
+    
     func getDateAndWeekDay() -> String{
         let cufrentDateTime = Date()
         let formatter = DateFormatter()
@@ -24,25 +24,22 @@ struct DateAndGreetings{
     
     func getWeekDay(weekDay: Int) -> String{
         var weekDayInString = ""
-        if (weekDay == 1){
+        //
+        //var weekday = 0
+        switch weekDay {
+        case 1  :
             weekDayInString = "Monday"
-        }
-        else if (weekDay == 2){
+        case 2  :
             weekDayInString = "Tuesday"
-        }
-        else if (weekDay == 3){
+        case 3  :
             weekDayInString = "Wednesday"
-        }
-        else if (weekDay == 4){
+        case 4  :
             weekDayInString = "Thrusday"
-        }
-        else if (weekDay == 5){
+        case 5  :
             weekDayInString = "Friday"
-        }
-        else if (weekDay == 6){
+        case 6  :
             weekDayInString = "Saturday"
-        }
-        else{
+        default :
             weekDayInString = "Sunday"
         }
         
@@ -67,9 +64,8 @@ struct DateAndGreetings{
         let greet = ("Good \(currentTimeOfDay)")
         return greet
     }
-
+    
 }
 
 
-    
 

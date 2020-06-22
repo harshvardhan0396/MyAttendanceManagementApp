@@ -63,10 +63,10 @@ class MyAttendanceViewController: UIViewController {
 
 extension MyAttendanceViewController{
     func getAttendanceSummaryData(endPoint: String){
-        let myAttendanceLoader = self.startLoader()
+        //let myAttendanceLoader = self.startLoader()
         GetData.getEmployeeData(requestUrl: URL(string: endPoint)!, resultType: AttendanceSummary.self){
             (attendanceSummaryResponse) in
-            self.stopLoader(loader: myAttendanceLoader)
+            //self.stopLoader(loader: myAttendanceLoader)
             DispatchQueue.main.async{
                 self.monthNameLbl?.text = attendanceSummaryResponse.monthName
                 self.totalLbl?.text = String(attendanceSummaryResponse.total)
